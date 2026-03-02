@@ -4,27 +4,78 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- Пункт 2: Мета-теги -->
-    <title>Мобильная кофейня "Кофе на колесах" | Свежий кофе с собой в Москве</title>
+    <!-- Мета-теги -->
+    <title>Мобильная кофейня "Кофе на колесах" | Свежий кофе с собой в Красноярске</title>
     <meta name="author" content="Власов Станислав">
     <meta name="date" content="2026-03-02">
     <meta name="copyright" content="Мобильная кофейня 'Кофе на колесах'">
-    <meta name="keywords" content="мобильная кофейня, кофе с собой, кофе на колесах, свежая обжарка, specialty кофе, кофе у метро, завтраки с собой">
-    <meta name="description" content="Мобильная кофейня 'Кофе на колесах' в центре Москвы. Мы готовим авторский specialty кофе из свежеобжаренных зерен. Работаем ежедневно у метро Арбатская.">
+    <meta name="keywords" content="мобильная кофейня, кофе с собой, кофе на колесах, свежая обжарка, specialty кофе, кофе у метро, завтраки с собой, Красноярск">
+    <meta name="description" content="Мобильная кофейня 'Кофе на колесах' в Красноярске на улице Ладо Кецховели, 22а. Мы готовим авторский specialty кофе из свежеобжаренных зерен. Работаем ежедневно с 8:00 до 22:00.">
     <meta name="robots" content="index, follow">
-    <meta name="author" content="Власов Станислав">
     <meta name="contact" content="+7 (995) 530-44-88">
     
-    <!-- Подключение CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <!-- ОСНОВНОЙ стилевой файл (связывание) -->
+    <link rel="stylesheet" href="css/style.css" title="Светлая тема" id="theme-link">
+    
+    <!-- АЛЬТЕРНАТИВНЫЙ стилевой файл (отключен по умолчанию, подключим через JS) -->
+    <link rel="stylesheet" href="css/alternative-style.css" title="Тёмная тема" disabled id="alt-theme-link">
+    
+    <!-- ВНЕДРЕННЫЙ стиль (для демонстрации пункта 7) -->
+    <style>
+        .special-note {
+            background-color: #ffd966;
+            padding: 15px;
+            border-radius: 10px;
+            font-weight: bold;
+            text-align: center;
+            border: 2px dashed #8b5904;
+            margin: 20px 0;
+            color: #c99393;
+        }
+        
+        /* Селектор по идентификатору (для пункта 6) */
+        #price {
+            border-left: 5px solid #d4a373;
+            padding-left: 20px;
+            margin: 30px 0;
+            background-color: rgba(212, 163, 115, 0.1);
+            border-radius: 0 10px 10px 0;
+        }
+        
+        /* Кнопка переключения темы */
+        .theme-switcher {
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .theme-btn {
+            background-color: #6f4e37;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s;
+        }
+        
+        .theme-btn:hover {
+            background-color: #d4a373;
+        }
+    </style>
 </head>
 <body>
-    <!-- Шапка сайта (header) - семантический тег -->
+    <!-- Шапка сайта -->
     <header class="site-header">
         <div class="container">
             <h1 class="site-title">Мобильная кофейня <span class="highlight">"Кофе на колесах"</span></h1>
             
-            <!-- Пункт 9: Навигация (оглавление) -->
+            <!-- Кнопка переключения темы (для удобства проверки) -->
+            <div class="theme-switcher">
+                <button class="theme-btn" onclick="switchTheme()">Переключить тему</button>
+            </div>
+            
+            <!-- Навигация -->
             <nav class="main-nav">
                 <ul class="nav-list">
                     <li><a href="#about">О нас</a></li>
@@ -37,16 +88,19 @@
         </div>
     </header>
 
-    <!-- Основное содержание (main) - семантический тег -->
+    <!-- Основное содержание -->
     <main class="site-main">
         <div class="container">
             
+            <!-- ВСТРОЕННЫЙ стиль (inline) для демонстрации пункта 7 -->
+            <p style="background-color: #e6d5b8; padding: 10px; border: 2px solid #6f4e37; border-radius: 5px; text-align: center; font-size: 1.2em; margin-bottom: 30px; color: #3e2723 !important;">
+                <b>☕ Акция!</b> Каждое утро с 8:00 до 10:00 скидка 20% на любой кофе
+            </p>
+            
             <!-- Секция "О нас" -->
             <section id="about" class="about-section">
-                <!-- Пункт 5: Заголовок секции -->
                 <h2 class="section-title">☕ О нашей кофейне</h2>
                 
-                <!-- Пункт 12: Вставка изображения (исправлено: фото не растягивается) -->
                 <div class="about-content">
                     <div class="image-container">
                         <img src="images/content/coffee-van.jpg" 
@@ -54,37 +108,37 @@
                              class="about-image">
                     </div>
                     
-                    <!-- Пункт 10: Разные шрифты и форматирование -->
                     <div class="about-text">
                         <p class="lead"><big><b>Добро пожаловать</b></big> в нашу мобильную кофейню! Мы — команда профессиональных бариста, которые решили, что <i>вкусный кофе</i> должен быть <u>доступен каждому</u>, где бы он ни находился.</p>
                         
-                        <p><tt>Наш фургончик</tt> можно найти у станции метро <b>"Арбатская"</b> ежедневно с <strong>7:00 до 21:00</strong>. Мы используем только <em>свежеобжаренные зерна</em> высшего сорта из Бразилии, Эфиопии и Колумбии.</p>
+                        <p><tt>Наш фургончик</tt> можно найти по адресу: <b>г. Красноярск, улица Ладо Кецховели, 22а</b>. Работаем ежедневно с <strong>8:00 до 22:00</strong>. Мы используем только <em>свежеобжаренные зерна</em> высшего сорта из Бразилии, Эфиопии и Колумбии.</p>
                         
-                        <!-- Пункт 6: Разделительная линия -->
                         <hr class="divider">
                         
                         <p class="special-font">Каждый напиток мы готовим с <span class="highlight">душой</span>, соблюдая все тонкости обжарки и заваривания. В нашем меню вы найдете как классические позиции, так и <small>авторские рецепты</small> от наших бариста.</p>
                         
-                        <!-- Пункт 10: Использование спецсимволов -->
                         <p class="special-chars">
                             <b>Наши гарантии:</b> только свежие продукты &copy; 2026<br>
                             Температура подачи: 88&deg;C - 92&deg;C<br>
                             Мы работаем &laquo;от сердца к сердцу&raquo;<br>
-                            Кофеин: C<sub>8</sub>H<sub>10</sub>N<sub>4</sub>O<sub>2</sub> (формула)<br>
+                            Кофеин: C<sub>8</sub>H<sub>10</sub>N<sub>4</sub>O<sub>2</sub><br>
                             Площадь нашего фургона: 8м<sup>2</sup> уюта
                         </p>
                     </div>
                 </div>
             </section>
             
-            <!-- Пункт 6: Декоративный разделитель -->
             <hr class="section-separator" noshade size="4" color="#6f4e37" width="80%">
             
             <!-- Секция "Меню" -->
             <section id="menu" class="menu-section">
                 <h2 class="section-title">📋 Наше меню</h2>
                 
-                <!-- Пункт 11: Неупорядоченный список (маркированный) -->
+                <!-- Демонстрация внедренного стиля (класс .special-note) -->
+                <div class="special-note">
+                    ⭐ Попробуйте наш новый авторский напиток "Красноярский завтрак" ⭐
+                </div>
+                
                 <h3 class="subsection-title">Кофейная карта:</h3>
                 <ul class="coffee-list">
                     <li class="coffee-item"><b>Эспрессо</b> — <i>30мл</i> чистого вкуса и энергии</li>
@@ -95,7 +149,6 @@
                     <li class="coffee-item"><i>Флэт Уайт</i> — двойной эспрессо с молоком</li>
                 </ul>
                 
-                <!-- Пункт 11: Упорядоченный список (нумерованный) с разными типами -->
                 <h3 class="subsection-title">Добавки (выберите до 3-х):</h3>
                 <ol type="A" class="addons-list">
                     <li>Сироп (карамель, орех, ваниль, кокос)</li>
@@ -106,7 +159,6 @@
                     <li>Мед</li>
                 </ol>
                 
-                <!-- Пункт 11: Еще один тип списка - римские цифры -->
                 <h3 class="subsection-title">Десерты:</h3>
                 <ol type="I" class="desserts-list">
                     <li>Чизкейк "Нью-Йорк"</li>
@@ -115,14 +167,12 @@
                     <li>Сырники со сгущенкой</li>
                 </ol>
                 
-                <!-- Пункт 6: Еще одна разделительная линия -->
                 <hr width="50%" align="center" class="menu-divider">
                 
-                <!-- Секция с ценами -->
+                <!-- Секция с ценами (используется id="price" для селектора по идентификатору) -->
                 <div id="price" class="price-section">
                     <h3 class="subsection-title">💰 Актуальные цены:</h3>
                     
-                    <!-- Пункт 11: Смешанный список -->
                     <dl class="price-list">
                         <dt><b>Эспрессо</b></dt>
                         <dd>150 ₽ — 180 ₽ (двойной)</dd>
@@ -139,11 +189,10 @@
                 </div>
             </section>
             
-            <!-- Секция "Фотогалерея" (исправлено: фото не растягиваются) -->
+            <!-- Секция "Фотогалерея" -->
             <section id="gallery" class="gallery-section">
                 <h2 class="section-title">📸 Фотогалерея</h2>
                 
-                <!-- Пункт 12: Несколько изображений с фиксированными размерами -->
                 <div class="gallery-grid">
                     <figure class="gallery-item">
                         <div class="gallery-image-container">
@@ -172,25 +221,21 @@
             <section id="contacts" class="contacts-section">
                 <h2 class="section-title">📍 Контакты</h2>
                 
-                <!-- Пункт 7: Разные шрифты -->
                 <p style="font-family: 'Courier New', monospace; font-size: 16px;">
-                    <b>Адрес:</b> г. Красноярск, Улица Ладо Кецховели, 22а
+                    <b>Адрес:</b> г. Красноярск, улица Ладо Кецховели, 22а
                 </p>
                 <p style="font-family: Georgia, serif; font-size: 18px; color: #5d3a1a;">
-                    <b>Часы работы:</b> Ежедневно 7:00 - 21:00
+                    <b>Часы работы:</b> Ежедневно с 8:00 до 22:00
                 </p>
                 <p style="font-family: Arial, sans-serif; font-size: 20px; font-weight: bold;">
                     <b>Телефон для связи:</b> <a href="tel:+79955304488" class="phone-link">+7 (995) 530-44-88</a>
                 </p>
                 
-                <!-- Контактная информация разработчика -->
                 <div class="developer-contact">
                     <p><b>Разработчик сайта:</b> Власов Станислав</p>
                     <p><b>Телефон разработчика:</b> <a href="tel:+79955304488">+7 (995) 530-44-88</a></p>
-                    <p><b>Email:</b> <a href="mailto:vlasov.stanislav@example.com">vlasov.stanislav@example.com</a></p>
                 </div>
                 
-                <!-- Пункт 8: Ссылки на сайты аналогичной тематики -->
                 <div class="links-block">
                     <h3 class="subsection-title">🔗 Наши друзья и партнеры:</h3>
                     <ul class="friends-list">
@@ -204,18 +249,33 @@
         </div>
     </main>
 
-    <!-- Подвал сайта (footer) - семантический тег -->
+    <!-- Подвал сайта -->
     <footer class="site-footer">
         <div class="container">
-            <!-- Пункт 3: Цветовое оформление и фоновое изображение заданы в CSS -->
             <div class="footer-content">
                 <p class="copyright">&copy; 2026 Мобильная кофейня "Кофе на колесах". Все права защищены.</p>
                 <p class="developer">Сайт разработан: <a href="#" class="developer-link">Власов Станислав</a> (тел. <a href="tel:+79955304488">+7 (995) 530-44-88</a>)</p>
-                
-                <!-- Кнопка наверх -->
                 <p><a href="#top" class="back-to-top">↑ Наверх</a></p>
             </div>
         </div>
     </footer>
+    
+    <!-- Простой JavaScript для переключения тем (для пункта 8) -->
+    <script>
+        function switchTheme() {
+            const mainTheme = document.getElementById('theme-link');
+            const altTheme = document.getElementById('alt-theme-link');
+            
+            if (altTheme.disabled) {
+                // Включаем альтернативную тему, отключаем основную
+                altTheme.disabled = false;
+                mainTheme.disabled = true;
+            } else {
+                // Включаем основную тему, отключаем альтернативную
+                altTheme.disabled = true;
+                mainTheme.disabled = false;
+            }
+        }
+    </script>
 </body>
 </html>
