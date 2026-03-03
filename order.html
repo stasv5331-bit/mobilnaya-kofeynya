@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Заказ кофе | Мобильная кофейня "Кофе на колесах"</title>
+    <meta name="author" content="Власов Станислав">
+    
+    <!-- Bootstrap 5 CSS (самый простой способ - CDN) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <!-- Наши старые стили (подключаем для фона и общих цветов, но Bootstrap их немного переопределит) -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        /* Дополнительные стили поверх Bootstrap */
+        body {
+            background-image: url('images/background/coffee-bg.jpg');
+            background-size: cover;
+        }
+        .bootstrap-card {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+    <!-- Навигационное меню (Bootstrap navbar) -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="bi bi-cup-hot-fill me-2"></i>Кофе на колесах
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="order.html">Заказать</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#contacts">Контакты</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Основной контент с использованием сетки Bootstrap -->
+    <div class="container my-5">
+        <div class="row">
+            <!-- Левая колонка - форма заказа -->
+            <div class="col-lg-7 mb-4">
+                <div class="bootstrap-card p-4">
+                    <h2 class="mb-4"><i class="bi bi-pencil-square me-2"></i>Оформить заказ</h2>
+                    
+                    <!-- Форма (пункт 3) -->
+                    <form class="needs-validation" novalidate>
+                        <!-- Группа ввода с иконкой (input group) -->
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Ваше имя</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="bi bi-person"></i></span>
+                                <input type="text" class="form-control" id="name" placeholder="Введите имя" required>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Телефон</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="bi bi-telephone"></i></span>
+                                <input type="tel" class="form-control" id="phone" placeholder="+7 (999) 123-45-67" required>
+                            </div>
+                        </div>
+                        
+                        <!-- Выбор напитка (группа кнопок) -->
+                        <div class="mb-3">
+                            <label class="form-label">Выберите напиток</label>
+                            <div class="btn-group w-100" role="group">
+                                <input type="radio" class="btn-check" name="drink" id="espresso" autocomplete="off" checked>
+                                <label class="btn btn-outline-secondary" for="espresso">Эспрессо</label>
+                                
+                                <input type="radio" class="btn-check" name="drink" id="cappuccino" autocomplete="off">
+                                <label class="btn btn-outline-secondary" for="cappuccino">Капучино</label>
+                                
+                                <input type="radio" class="btn-check" name="drink" id="latte" autocomplete="off">
+                                <label class="btn btn-outline-secondary" for="latte">Латте</label>
+                            </div>
+                        </div>
+                        
+                        <!-- Объём (группа кнопок) -->
+                        <div class="mb-3">
+                            <label class="form-label">Объём</label>
+                            <div class="btn-group w-100" role="group">
+                                <input type="radio" class="btn-check" name="size" id="small" autocomplete="off" checked>
+                                <label class="btn btn-outline-secondary" for="small">200 мл</label>
+                                
+                                <input type="radio" class="btn-check" name="size" id="medium" autocomplete="off">
+                                <label class="btn btn-outline-secondary" for="medium">300 мл</label>
+                                
+                                <input type="radio" class="btn-check" name="size" id="large" autocomplete="off">
+                                <label class="btn btn-outline-secondary" for="large">400 мл</label>
+                            </div>
+                        </div>
+                        
+                        <!-- Добавки (чекбоксы) -->
+                        <div class="mb-3">
+                            <label class="form-label">Добавки</label>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="sugar">
+                                        <label class="form-check-label" for="sugar">Сахар</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="cinnamon">
+                                        <label class="form-check-label" for="cinnamon">Корица</label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="syrup">
+                                        <label class="form-check-label" for="syrup">Сироп</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="cream">
+                                        <label class="form-check-label" for="cream">Сливки</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Комментарий -->
+                        <div class="mb-3">
+                            <label for="comment" class="form-label">Комментарий</label>
+                            <textarea class="form-control" id="comment" rows="2" placeholder="Пожелания к заказу..."></textarea>
+                        </div>
+                        
+                        <!-- Способ оплаты (группа кнопок) -->
+                        <div class="mb-4">
+                            <label class="form-label">Способ оплаты</label>
+                            <div class="btn-group w-100" role="group">
+                                <input type="radio" class="btn-check" name="payment" id="cash" autocomplete="off" checked>
+                                <label class="btn btn-outline-secondary" for="cash">Наличные</label>
+                                
+                                <input type="radio" class="btn-check" name="payment" id="card" autocomplete="off">
+                                <label class="btn btn-outline-secondary" for="card">Карта</label>
+                                
+                                <input type="radio" class="btn-check" name="payment" id="online" autocomplete="off">
+                                <label class="btn btn-outline-secondary" for="online">Онлайн</label>
+                            </div>
+                        </div>
+                        
+                        <!-- Кнопки формы -->
+                        <div class="d-flex gap-2">
+                            <button type="submit" class="btn btn-primary flex-grow-1">
+                                <i class="bi bi-check-circle me-2"></i>Заказать
+                            </button>
+                            <button type="reset" class="btn btn-secondary">
+                                <i class="bi bi-arrow-counterclockwise"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Правая колонка - таблица с ценами -->
+            <div class="col-lg-5">
+                <div class="bootstrap-card p-4">
+                    <h3 class="mb-4"><i class="bi bi-table me-2"></i>Наши цены</h3>
+                    
+                    <!-- Таблица (пункт 4) -->
+                    <table class="table table-striped table-hover">
+                        <thead class="table-dark">
+                            <tr>
+                                <th scope="col">Напиток</th>
+                                <th scope="col">200 мл</th>
+                                <th scope="col">300 мл</th>
+                                <th scope="col">400 мл</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">Эспрессо</th>
+                                <td>150 ₽</td>
+                                <td>—</td>
+                                <td>—</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Американо</th>
+                                <td>180 ₽</td>
+                                <td>210 ₽</td>
+                                <td>—</td>
+                            </tr>
+                            <tr class="table-primary">
+                                <th scope="row">Капучино</th>
+                                <td>220 ₽</td>
+                                <td>250 ₽</td>
+                                <td>290 ₽</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Латте</th>
+                                <td>240 ₽</td>
+                                <td>270 ₽</td>
+                                <td>320 ₽</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Раф-кофе</th>
+                                <td>260 ₽</td>
+                                <td>300 ₽</td>
+                                <td>350 ₽</td>
+                            </tr>
+                        </tbody>
+                        <caption class="mt-2">* Добавки: +20-50 ₽</caption>
+                    </table>
+                    
+                    <!-- Дополнительная информация (Glyphicons - используем Bootstrap Icons) -->
+                    <div class="alert alert-info mt-4 d-flex align-items-center">
+                        <i class="bi bi-info-circle-fill me-3 fs-4"></i>
+                        <div>
+                            <strong>Бесплатная доставка</strong> при заказе от 500 ₽
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS (для работы компонентов) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Простая валидация формы -->
+    <script>
+        (function() {
+            'use strict';
+            var forms = document.querySelectorAll('.needs-validation');
+            Array.prototype.slice.call(forms).forEach(function(form) {
+                form.addEventListener('submit', function(event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        })();
+    </script>
+</body>
+</html>
