@@ -1,21 +1,17 @@
 /* ========== ОСНОВНЫЕ НАСТРОЙКИ ========== */
-
-/* Пункт 4: Фоновое изображение для всей страницы */
 body {
     background-image: url('../images/background/coffee-bg.jpg');
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
-    /* Пункт 3: Цветовое оформление */
-    background-color: #f5f0e6; /* Запасной цвет, если не загрузится фон */
-    color: #3e2723; /* Основной цвет текста */
-    font-family: 'Segoe UI', Arial, sans-serif; /* Пункт 7: Основной шрифт */
+    background-color: #f5f0e6;
+    color: #3e2723;
+    font-family: 'Segoe UI', Arial, sans-serif;
     margin: 0;
     padding: 0;
     line-height: 1.6;
 }
 
-/* Контейнер для центрирования контента */
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -23,9 +19,8 @@ body {
 }
 
 /* ========== ШАПКА САЙТА ========== */
-
 .site-header {
-    background-color: #6f4e37; /* Кофейно-коричневый */
+    background-color: #6f4e37;
     color: #fff8e7;
     padding: 30px 0;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
@@ -45,7 +40,6 @@ body {
     font-style: italic;
 }
 
-/* Навигация */
 .main-nav {
     text-align: center;
 }
@@ -77,10 +71,9 @@ body {
 }
 
 /* ========== ОСНОВНОЙ КОНТЕНТ ========== */
-
 .site-main {
     padding: 40px 0;
-    background-color: rgba(255, 248, 231, 0.85); /* Полупрозрачный фон для читаемости */
+    background-color: rgba(255, 248, 231, 0.85);
     border-radius: 20px;
     margin: 30px auto;
     max-width: 1300px;
@@ -103,7 +96,6 @@ body {
 }
 
 /* ========== СЕКЦИЯ "О НАС" ========== */
-
 .about-content {
     display: flex;
     flex-wrap: wrap;
@@ -111,7 +103,6 @@ body {
     margin-bottom: 30px;
 }
 
-/* Исправлено: Контейнер для изображения с фиксированными размерами */
 .image-container {
     flex: 0 0 400px;
     height: 300px;
@@ -124,7 +115,7 @@ body {
 .about-image {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Сохраняет пропорции, обрезая лишнее */
+    object-fit: cover;
     display: block;
 }
 
@@ -155,7 +146,6 @@ body {
 }
 
 /* ========== РАЗДЕЛИТЕЛИ ========== */
-
 .divider {
     border: none;
     height: 2px;
@@ -177,8 +167,6 @@ body {
 }
 
 /* ========== СПИСКИ ========== */
-
-/* Кофейный список */
 .coffee-list {
     list-style-type: none;
     padding-left: 0;
@@ -193,7 +181,6 @@ body {
     font-size: 1.1em;
 }
 
-/* Список добавок */
 .addons-list {
     list-style-type: upper-alpha;
     background-color: #f4e9d8;
@@ -201,11 +188,6 @@ body {
     border-radius: 10px;
 }
 
-.addons-list li {
-    margin-bottom: 8px;
-}
-
-/* Список десертов */
 .desserts-list {
     list-style-type: upper-roman;
     background-color: #ecd9c6;
@@ -213,7 +195,6 @@ body {
     border-radius: 10px;
 }
 
-/* Список цен */
 .price-list {
     background-color: #fff2e0;
     padding: 20px;
@@ -234,8 +215,7 @@ body {
     font-size: 1.1em;
 }
 
-/* ========== ГАЛЕРЕЯ (исправлено: фото не растягиваются) ========== */
-
+/* ========== ГАЛЕРЕЯ ========== */
 .gallery-grid {
     display: flex;
     gap: 30px;
@@ -257,7 +237,6 @@ body {
     transform: scale(1.05);
 }
 
-/* Исправлено: Контейнер для изображения с фиксированными размерами */
 .gallery-image-container {
     width: 250px;
     height: 200px;
@@ -270,7 +249,7 @@ body {
 .gallery-image {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Сохраняет пропорции, обрезая лишнее */
+    object-fit: cover;
     display: block;
 }
 
@@ -281,7 +260,6 @@ body {
 }
 
 /* ========== КОНТАКТЫ И ССЫЛКИ ========== */
-
 .contacts-section {
     background-color: rgba(111, 78, 55, 0.1);
     padding: 30px;
@@ -297,10 +275,6 @@ body {
     border-left: 4px solid #6f4e37;
 }
 
-.developer-contact p {
-    margin: 5px 0;
-}
-
 .phone-link, .developer-link {
     color: #8b5a2b;
     text-decoration: none;
@@ -309,17 +283,8 @@ body {
     padding-bottom: 2px;
 }
 
-.phone-link:hover, .developer-link:hover {
-    color: #d4a373;
-    border-bottom-color: #8b5a2b;
-}
-
 .friends-list {
     list-style-type: square;
-}
-
-.friends-list li {
-    margin-bottom: 10px;
 }
 
 .friends-list a {
@@ -335,7 +300,6 @@ body {
 }
 
 /* ========== ПОДВАЛ ========== */
-
 .site-footer {
     background-color: #3e2723;
     color: #fff8e7;
@@ -354,10 +318,6 @@ body {
     text-decoration: none;
 }
 
-.footer-content a:hover {
-    text-decoration: underline;
-}
-
 .back-to-top {
     display: inline-block;
     padding: 10px 20px;
@@ -371,27 +331,131 @@ body {
 
 .back-to-top:hover {
     background-color: #ffd966;
-    color: #3e2723;
 }
 
-/* ========== ВСПОМОГАТЕЛЬНЫЕ КЛАССЫ ========== */
-
-.clearfix::after {
-    content: "";
-    clear: both;
-    display: table;
-}
-
-.highlight {
-    color: #d4a373;
-    font-weight: bold;
-}
-
-/* Селектор по идентификатору (для пункта 6) */
+/* ========== СЕЛЕКТОРЫ ПО ID ========== */
 #price {
     border-left: 5px solid #d4a373;
     padding-left: 20px;
     margin: 30px 0;
     background-color: rgba(212, 163, 115, 0.1);
     border-radius: 0 10px 10px 0;
+}
+
+/* ========== СТИЛИ ДЛЯ ЗАДАНИЯ 3 ========== */
+.fixed-top-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: #6f4e37;
+    color: #fff8e7;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 50px;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: background-color 0.3s, transform 0.3s;
+    z-index: 1000;
+}
+
+.fixed-top-btn:hover {
+    background-color: #d4a373;
+    transform: scale(1.1);
+}
+
+.features-section {
+    margin: 50px 0;
+    padding: 20px;
+    background-color: rgba(255, 248, 231, 0.7);
+    border-radius: 15px;
+}
+
+.features-container {
+    margin: 30px 0;
+}
+
+.feature-column {
+    float: left;
+    width: 30%;
+    margin-right: 5%;
+    background-color: #fff5e6;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    min-height: 220px;
+    box-sizing: border-box;
+    border: 1px solid #d4a373;
+}
+
+.feature-column:last-child {
+    margin-right: 0;
+}
+
+.feature-column h3 {
+    color: #6f4e37;
+    margin-top: 0;
+    border-bottom: 2px solid #d4a373;
+    padding-bottom: 10px;
+}
+
+.feature-column p {
+    color: #3e2723;
+    line-height: 1.5;
+}
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.clear-demo {
+    clear: both;
+    background-color: #ffd966;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 30px;
+    text-align: center;
+    font-weight: bold;
+    color: #3e2723;
+    border: 2px dashed #6f4e37;
+}
+
+.hit-label {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    background-color: #ff6b6b;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 10;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+    .feature-column {
+        float: none;
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+        min-height: auto;
+    }
+    
+    .fixed-top-btn {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 20px;
+        bottom: 20px;
+        right: 20px;
+    }
 }

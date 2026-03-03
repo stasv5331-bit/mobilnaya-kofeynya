@@ -1,5 +1,4 @@
 /* ========== АЛЬТЕРНАТИВНАЯ ТЁМНАЯ ТЕМА ========== */
-
 body {
     background-image: url('../images/background/dark-coffee-bg.jpg');
     background-size: cover;
@@ -228,7 +227,7 @@ body {
     font-size: 1.1em;
 }
 
-/* Галерея */
+/* ========== ГАЛЕРЕЯ (ИСПРАВЛЕНО ДЛЯ ТЁМНОЙ ТЕМЫ) ========== */
 .gallery-grid {
     display: flex;
     gap: 30px;
@@ -267,4 +266,251 @@ body {
     display: block;
 }
 
+.gallery-item figcaption {
+    margin-top: 10px;
+    font-style: italic;
+    color: #e6d5b8; /* Светлый текст для подписей в тёмной теме */
+}
 
+/* ========== СЕЛЕКТОРЫ ПО ID ========== */
+#price {
+    border-left: 5px solid #b87c4b;
+    padding-left: 20px;
+    margin: 30px 0;
+    background-color: rgba(184, 124, 75, 0.2);
+    border-radius: 0 10px 10px 0;
+}
+
+/* ========== НОВЫЕ СТИЛИ ДЛЯ ЗАДАНИЯ 3 ========== */
+
+/* Фиксированная кнопка "Наверх" (fixed) */
+.fixed-top-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: #b87c4b;
+    color: #1a0f0a;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 50px;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    transition: background-color 0.3s, transform 0.3s;
+    z-index: 1000;
+}
+
+.fixed-top-btn:hover {
+    background-color: #d4a373;
+    transform: scale(1.1);
+}
+
+/* Секция с колонками через float */
+.features-section {
+    margin: 50px 0;
+    padding: 20px;
+    background-color: rgba(42, 26, 18, 0.8);
+    border-radius: 15px;
+}
+
+.features-container {
+    margin: 30px 0;
+}
+
+.feature-column {
+    float: left;
+    width: 30%;
+    margin-right: 5%;
+    background-color: #2a1a12;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    min-height: 220px;
+    box-sizing: border-box;
+    border: 1px solid #b87c4b;
+}
+
+.feature-column:last-child {
+    margin-right: 0;
+}
+
+.feature-column h3 {
+    color: #d4a373;
+    margin-top: 0;
+    border-bottom: 2px solid #b87c4b;
+    padding-bottom: 10px;
+    font-size: 1.3em;
+}
+
+.feature-column p {
+    color: #e6d5b8;
+    line-height: 1.5;
+}
+
+/* Clearfix для контейнера с float */
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Демонстрация clear */
+.clear-demo {
+    clear: both;
+    background-color: #b87c4b;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 30px;
+    text-align: center;
+    font-weight: bold;
+    color: #1a0f0a;
+    border: 2px dashed #e6d5b8;
+}
+
+.clear-demo p {
+    margin: 0;
+    font-size: 1.1em;
+}
+
+/* Абсолютное позиционирование для ярлыка "Хит" */
+.hit-label {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    background-color: #ff6b6b;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    z-index: 10;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Специальная заметка */
+.special-note {
+    background-color: #2a1a12;
+    color: #e6d5b8;
+    padding: 15px;
+    border-radius: 10px;
+    font-weight: bold;
+    text-align: center;
+    border: 2px dashed #b87c4b;
+    margin: 20px 0;
+}
+
+/* Контакты */
+.contacts-section {
+    background-color: rgba(42, 26, 18, 0.5);
+    padding: 30px;
+    border-radius: 20px;
+    margin-top: 40px;
+}
+
+.developer-contact {
+    background-color: #2a1a12;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 20px 0;
+    border-left: 4px solid #b87c4b;
+    color: #e6d5b8;
+}
+
+.phone-link, .developer-link {
+    color: #d4a373;
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 2px solid #b87c4b;
+    padding-bottom: 2px;
+}
+
+.phone-link:hover, .developer-link:hover {
+    color: #e6d5b8;
+    border-bottom-color: #d4a373;
+}
+
+.friends-list {
+    list-style-type: square;
+    color: #e6d5b8;
+}
+
+.friends-list a {
+    color: #d4a373;
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s;
+}
+
+.friends-list a:hover {
+    border-bottom-color: #d4a373;
+}
+
+/* Подвал */
+.site-footer {
+    background-color: #1a0f0a;
+    color: #e6d5b8;
+    padding: 40px 0;
+    margin-top: 50px;
+    border-top: 5px solid #b87c4b;
+}
+
+.footer-content {
+    text-align: center;
+    font-size: 1.1em;
+}
+
+.footer-content a {
+    color: #d4a373;
+    text-decoration: none;
+}
+
+.back-to-top {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #b87c4b;
+    color: #1a0f0a;
+    border-radius: 25px;
+    margin-top: 15px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.back-to-top:hover {
+    background-color: #d4a373;
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 768px) {
+    .feature-column {
+        float: none;
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+        min-height: auto;
+    }
+    
+    .fixed-top-btn {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 20px;
+        bottom: 20px;
+        right: 20px;
+    }
+    
+    .gallery-item {
+        flex: 0 0 100%;
+    }
+    
+    .gallery-image-container {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 5/4;
+    }
+}

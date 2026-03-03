@@ -17,10 +17,10 @@
     <!-- ОСНОВНОЙ стилевой файл (связывание) -->
     <link rel="stylesheet" href="css/style.css" title="Светлая тема" id="theme-link">
     
-    <!-- АЛЬТЕРНАТИВНЫЙ стилевой файл (отключен по умолчанию, подключим через JS) -->
+    <!-- АЛЬТЕРНАТИВНЫЙ стилевой файл (отключен по умолчанию) -->
     <link rel="stylesheet" href="css/alternative-style.css" title="Тёмная тема" disabled id="alt-theme-link">
     
-    <!-- ВНЕДРЕННЫЙ стиль (для демонстрации пункта 7) -->
+    <!-- ВНЕДРЕННЫЙ стиль -->
     <style>
         .special-note {
             background-color: #ffd966;
@@ -28,18 +28,9 @@
             border-radius: 10px;
             font-weight: bold;
             text-align: center;
-            border: 2px dashed #8b5904;
+            border: 2px dashed #6f4e37;
             margin: 20px 0;
-            color: #c99393;
-        }
-        
-        /* Селектор по идентификатору (для пункта 6) */
-        #price {
-            border-left: 5px solid #d4a373;
-            padding-left: 20px;
-            margin: 30px 0;
-            background-color: rgba(212, 163, 115, 0.1);
-            border-radius: 0 10px 10px 0;
+            color: #3e2723;
         }
         
         /* Кнопка переключения темы */
@@ -70,7 +61,7 @@
         <div class="container">
             <h1 class="site-title">Мобильная кофейня <span class="highlight">"Кофе на колесах"</span></h1>
             
-            <!-- Кнопка переключения темы (для удобства проверки) -->
+            <!-- Кнопка переключения темы -->
             <div class="theme-switcher">
                 <button class="theme-btn" onclick="switchTheme()">Переключить тему</button>
             </div>
@@ -92,8 +83,8 @@
     <main class="site-main">
         <div class="container">
             
-            <!-- ВСТРОЕННЫЙ стиль (inline) для демонстрации пункта 7 -->
-            <p style="background-color: #e6d5b8; padding: 10px; border: 2px solid #6f4e37; border-radius: 5px; text-align: center; font-size: 1.2em; margin-bottom: 30px; color: #3e2723 !important;">
+            <!-- ВСТРОЕННЫЙ стиль (inline) -->
+            <p style="background-color: #e6d5b8; padding: 10px; border: 2px solid #6f4e37; border-radius: 5px; text-align: center; font-size: 1.2em; margin-bottom: 30px; color: #3e2723;">
                 <b>☕ Акция!</b> Каждое утро с 8:00 до 10:00 скидка 20% на любой кофе
             </p>
             
@@ -130,18 +121,47 @@
             
             <hr class="section-separator" noshade size="4" color="#6f4e37" width="80%">
             
+            <!-- НОВАЯ СЕКЦИЯ: Почему выбирают нас (float колонки + clear) -->
+            <section class="features-section">
+                <h2 class="section-title">✨ Почему выбирают нас</h2>
+                
+                <div class="features-container clearfix">
+                    <div class="feature-column">
+                        <h3>☕ Свежая обжарка</h3>
+                        <p>Мы обжариваем зерна каждые 3 дня. Только так можно раскрыть настоящий вкус кофе из Бразилии, Эфиопии и Колумбии.</p>
+                    </div>
+                    
+                    <div class="feature-column">
+                        <h3>🚚 Мобильность</h3>
+                        <p>Наш фургончик всегда там, где вы. Следите за нашими перемещениями в соцсетях. Сегодня работаем на Ладо Кецховели, 22а.</p>
+                    </div>
+                    
+                    <div class="feature-column">
+                        <h3>💚 Забота о природе</h3>
+                        <p>Мы используем биоразлагаемые стаканчики и дарим скидку 20% за свою кружку. Вместе сделаем мир чище!</p>
+                    </div>
+                </div>
+                
+                <!-- Демонстрация clear -->
+                <div class="clear-demo">
+                    <p>* Акция на скидку за свою кружку действует ежедневно с 8:00 до 22:00</p>
+                </div>
+            </section>
+            
             <!-- Секция "Меню" -->
             <section id="menu" class="menu-section">
                 <h2 class="section-title">📋 Наше меню</h2>
                 
-                <!-- Демонстрация внедренного стиля (класс .special-note) -->
                 <div class="special-note">
                     ⭐ Попробуйте наш новый авторский напиток "Красноярский завтрак" ⭐
                 </div>
                 
                 <h3 class="subsection-title">Кофейная карта:</h3>
                 <ul class="coffee-list">
-                    <li class="coffee-item"><b>Эспрессо</b> — <i>30мл</i> чистого вкуса и энергии</li>
+                    <li class="coffee-item" style="position: relative;">
+                        <span class="hit-label">ХИТ</span>
+                        <b>Эспрессо</b> — <i>30мл</i> чистого вкуса и энергии
+                    </li>
                     <li class="coffee-item"><big><b>Американо</b></big> — объемный и мягкий (200мл)</li>
                     <li class="coffee-item"><tt>Капучино</tt> — с нежной молочной пенкой (300мл)</li>
                     <li class="coffee-item"><small>Латте</small> — для любителей молока (400мл)</li>
@@ -169,20 +189,17 @@
                 
                 <hr width="50%" align="center" class="menu-divider">
                 
-                <!-- Секция с ценами (используется id="price" для селектора по идентификатору) -->
+                <!-- Секция с ценами -->
                 <div id="price" class="price-section">
                     <h3 class="subsection-title">💰 Актуальные цены:</h3>
                     
                     <dl class="price-list">
                         <dt><b>Эспрессо</b></dt>
                         <dd>150 ₽ — 180 ₽ (двойной)</dd>
-                        
                         <dt><b>Капучино</b></dt>
                         <dd>250 ₽ (классический) / 300 ₽ (авторский)</dd>
-                        
                         <dt><b>Латте</b></dt>
                         <dd>270 ₽ — 320 ₽ (с сиропом)</dd>
-                        
                         <dt><b>Авторские напитки</b></dt>
                         <dd>от 350 ₽</dd>
                     </dl>
@@ -196,21 +213,21 @@
                 <div class="gallery-grid">
                     <figure class="gallery-item">
                         <div class="gallery-image-container">
-                            <img src="images/content/espresso.jpg" alt="Эспрессо в нашей кофейне" class="gallery-image">
+                            <img src="images/content/espresso.jpg" alt="Эспрессо" class="gallery-image">
                         </div>
                         <figcaption>Наш фирменный эспрессо</figcaption>
                     </figure>
                     
                     <figure class="gallery-item">
                         <div class="gallery-image-container">
-                            <img src="images/content/cappuccino.jpg" alt="Капучино с артом" class="gallery-image">
+                            <img src="images/content/cappuccino.jpg" alt="Капучино" class="gallery-image">
                         </div>
                         <figcaption>Капучино с латте-артом</figcaption>
                     </figure>
                     
                     <figure class="gallery-item">
                         <div class="gallery-image-container">
-                            <img src="images/content/latte.jpg" alt="Латте с сиропом" class="gallery-image">
+                            <img src="images/content/latte.jpg" alt="Латте" class="gallery-image">
                         </div>
                         <figcaption>Латте с карамельным сиропом</figcaption>
                     </figure>
@@ -239,10 +256,10 @@
                 <div class="links-block">
                     <h3 class="subsection-title">🔗 Наши друзья и партнеры:</h3>
                     <ul class="friends-list">
-                        <li><a href="https://coffeelike.ru/" target="_blank" title="Сеть кофеен Coffee Like">Coffee Like</a> — сеть мобильных кофеен</li>
-                        <li><a href="https://shokoladnitsa.ru/" target="_blank" title="Шоколадница">Шоколадница</a> — уютные кофейни</li>
-                        <li><a href="https://www.caffeine.ru/" target="_blank" title="Caffeine">Caffeine</a> — обжарщики кофе</li>
-                        <li><a href="https://surfcoffee.ru/" target="_blank" title="Surf Coffee">Surf Coffee</a> — стильный кофе</li>
+                        <li><a href="https://coffeelike.ru/" target="_blank">Coffee Like</a></li>
+                        <li><a href="https://shokoladnitsa.ru/" target="_blank">Шоколадница</a></li>
+                        <li><a href="https://www.caffeine.ru/" target="_blank">Caffeine</a></li>
+                        <li><a href="https://surfcoffee.ru/" target="_blank">Surf Coffee</a></li>
                     </ul>
                 </div>
             </section>
@@ -253,25 +270,26 @@
     <footer class="site-footer">
         <div class="container">
             <div class="footer-content">
-                <p class="copyright">&copy; 2026 Мобильная кофейня "Кофе на колесах". Все права защищены.</p>
-                <p class="developer">Сайт разработан: <a href="#" class="developer-link">Власов Станислав</a> (тел. <a href="tel:+79955304488">+7 (995) 530-44-88</a>)</p>
+                <p class="copyright">&copy; 2026 Мобильная кофейня "Кофе на колесах"</p>
+                <p class="developer">Сайт разработан: Власов Станислав (тел. +7 (995) 530-44-88)</p>
                 <p><a href="#top" class="back-to-top">↑ Наверх</a></p>
             </div>
         </div>
     </footer>
     
-    <!-- Простой JavaScript для переключения тем (для пункта 8) -->
+    <!-- Пункт 2: Фиксированная кнопка "Наверх" (fixed) - ВНЕ скрипта! -->
+    <a href="#" class="fixed-top-btn" title="Наверх">↑</a>
+    
+    <!-- JavaScript для переключения тем -->
     <script>
         function switchTheme() {
             const mainTheme = document.getElementById('theme-link');
             const altTheme = document.getElementById('alt-theme-link');
             
             if (altTheme.disabled) {
-                // Включаем альтернативную тему, отключаем основную
                 altTheme.disabled = false;
                 mainTheme.disabled = true;
             } else {
-                // Включаем основную тему, отключаем альтернативную
                 altTheme.disabled = true;
                 mainTheme.disabled = false;
             }
