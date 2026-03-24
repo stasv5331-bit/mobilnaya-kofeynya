@@ -3,48 +3,327 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript: Задание 6</title>
+    <title>JavaScript: Работа с DOM и событиями</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            max-width: 800px;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
-        }
-        #results {
             background-color: #f5f0e6;
-            border: 2px solid #6f4e37;
-            border-radius: 15px;
-            padding: 20px;
-            margin-top: 20px;
+            color: #3e2723;
         }
-        #results h2 {
+        
+        h1, h2 {
             color: #6f4e37;
-            margin-top: 0;
+            border-bottom: 3px solid #d4a373;
+            padding-bottom: 10px;
         }
-        #results p {
-            background-color: #fff8e7;
-            padding: 10px;
-            border-left: 4px solid #d4a373;
+        
+        .section {
+            background-color: rgba(255, 248, 231, 0.9);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .info-box {
+            background-color: #e6d5b8;
+            padding: 15px;
+            border-radius: 10px;
             margin: 10px 0;
+            border-left: 5px solid #6f4e37;
+        }
+        
+        button {
+            background-color: #6f4e37;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            margin: 5px;
+            transition: background-color 0.3s;
+        }
+        
+        button:hover {
+            background-color: #d4a373;
+        }
+        
+        .slider-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .slider-img {
+            max-width: 400px;
+            max-height: 300px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            border: 3px solid #d4a373;
+        }
+        
+        .nav-links a {
+            display: inline-block;
+            margin: 0 10px;
+            padding: 5px 10px;
+            background-color: #d4a373;
+            color: #3e2723;
+            text-decoration: none;
+            border-radius: 20px;
+        }
+        
+        .nav-links a:hover {
+            background-color: #6f4e37;
+            color: white;
+        }
+        
+        .demo-image {
+            width: 200px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin: 10px;
+            cursor: pointer;
+        }
+        
+        .highlight {
+            background-color: #ffd966;
+            padding: 2px 5px;
+            border-radius: 5px;
         }
     </style>
 </head>
 <body>
-    <h1>JavaScript: Практическое задание №6</h1>
-    <p>Реализованы функции:</p>
-    <ul>
-        <li><strong>Задание 1:</strong> Сумма элементов последовательности</li>
-        <li><strong>Задание 2:</strong> Минимальный элемент в последовательности</li>
-        <li><strong>Задание 5:</strong> Общее сопротивление при параллельном соединении</li>
-    </ul>
-    
-    <!-- Результаты будут выведены сюда -->
-    <div id="results">
-        <h2>Результаты выполнения:</h2>
-    </div>
 
-    <!-- Подключаем JavaScript -->
-    <script src="js/main.js"></script>
+<h1>📚 7 задание: Работа с DOM и событиями</h1>
+
+<!-- Секция 1: Ссылки и изображения -->
+<div class="section">
+    <h2>🔗 Ссылки, якоря и изображения на странице</h2>
+    
+    <!-- Ссылки для демонстрации -->
+    <div class="nav-links">
+        <a href="https://coffeelike.ru/" id="link1" target="_blank">Coffee Like</a>
+        <a href="https://shokoladnitsa.ru/" id="link2" target="_blank">Шоколадница</a>
+        <a href="https://www.caffeine.ru/" id="link3" target="_blank">Caffeine</a>
+        <a href="#anchor1" name="anchor1">Якорь 1 (внутренняя ссылка)</a>
+        <a href="#anchor2" name="anchor2">Якорь 2</a>
+    </div>
+    
+    <!-- Изображения для демонстрации -->
+    <div>
+        <img id="img1" class="demo-image" src="https://via.placeholder.com/200x150/6f4e37/ffffff?text=Кофе+1" alt="Кофе 1">
+        <img id="img2" class="demo-image" src="https://via.placeholder.com/200x150/d4a373/3e2723?text=Кофе+2" alt="Кофе 2">
+        <img id="img3" class="demo-image" src="https://via.placeholder.com/200x150/e6d5b8/6f4e37?text=Кофе+3" alt="Кофе 3">
+    </div>
+    
+    <div class="info-box" id="info-output">
+        <strong>📊 Информация о странице:</strong><br>
+        <span id="info-content">Загружается...</span>
+    </div>
+</div>
+
+<!-- Секция 2: Обработчики событий -->
+<div class="section">
+    <h2>🎮 Обработчики событий</h2>
+    
+    <div>
+        <button id="btn-click">Нажми меня (click)</button>
+        <button id="btn-dblclick">Дважды нажми (dblclick)</button>
+        <button id="btn-mouse">Наведи мышь (mouseenter/mouseleave)</button>
+        <input type="text" id="input-focus" placeholder="Кликни для фокуса (focus/blur)">
+        <select id="select-change">
+            <option value="1">Вариант 1</option>
+            <option value="2">Вариант 2</option>
+            <option value="3">Вариант 3</option>
+        </select>
+    </div>
+    
+    <div class="info-box" id="event-output">
+        <strong>🖱️ Последнее событие:</strong><br>
+        <span id="event-info">Ожидание события...</span>
+    </div>
+</div>
+
+<!-- Секция 3: Слайдер (перелистывание картинок) -->
+<div class="section">
+    <h2>🖼️ Слайдер (перелистывание картинок)</h2>
+    
+    <div class="slider-container">
+        <img id="slider" class="slider-img" src="https://via.placeholder.com/400x300/6f4e37/ffffff?text=Эспрессо" alt="Слайд">
+        <br><br>
+        <button id="prev-btn">← Предыдущий</button>
+        <button id="next-btn">Следующий →</button>
+        <p id="slide-index">Изображение 1 из 4</p>
+    </div>
+</div>
+
+<script>
+    "use strict";
+    
+    // ============================================
+    // 1. ВЫВОД ИНФОРМАЦИИ О ССЫЛКАХ, ЯКОРЯХ, ИЗОБРАЖЕНИЯХ
+    // ============================================
+    
+    function displayPageInfo() {
+        let info = "";
+        
+        // ССЫЛКИ (links) - все теги <a> с атрибутом href
+        const links = document.links;
+        info += `🔗 Ссылки (${links.length} шт.):\n`;
+        for (let i = 0; i < links.length; i++) {
+            info += `   ${i+1}. ${links[i].textContent || links[i].href} → ${links[i].href}\n`;
+        }
+        info += "\n";
+        
+        // ЯКОРЯ (anchors) - теги <a> с атрибутом name
+        const anchors = document.anchors;
+        info += `📍 Якоря (${anchors.length} шт.):\n`;
+        for (let i = 0; i < anchors.length; i++) {
+            info += `   ${i+1}. name="${anchors[i].name}" → ${anchors[i].href || "внутренний"}\n`;
+        }
+        info += "\n";
+        
+        // ИЗОБРАЖЕНИЯ (images)
+        const images = document.images;
+        info += `🖼️ Изображения (${images.length} шт.):\n`;
+        for (let i = 0; i < images.length; i++) {
+            info += `   ${i+1}. src="${images[i].src}", alt="${images[i].alt || "без alt"}"\n`;
+        }
+        
+        // Выводим информацию на страницу и в консоль
+        document.getElementById('info-content').innerHTML = info.replace(/\n/g, '<br>');
+        console.log("=== ИНФОРМАЦИЯ О СТРАНИЦЕ ===\n" + info);
+    }
+    
+    // Запускаем после полной загрузки страницы
+    window.addEventListener('load', displayPageInfo);
+    
+    
+    // ============================================
+    // 2. ОБРАБОТЧИКИ СОБЫТИЙ (разные способы)
+    // ============================================
+    
+    const eventOutput = document.getElementById('event-info');
+    
+    // Функция для вывода информации о событии
+    function logEvent(event) {
+        const eventType = event.type;
+        const target = event.target;
+        const tagName = target.tagName;
+        const id = target.id || "без id";
+        const text = target.textContent || target.value || target.placeholder || "нет текста";
+        
+        const message = `Событие: ${eventType} | Элемент: ${tagName}#${id} | Содержимое: ${text.substring(0, 30)}`;
+        eventOutput.textContent = message;
+        console.log(`[СОБЫТИЕ] ${message}`);
+    }
+    
+    // Способ 1: Через HTML-атрибут (уже есть у кнопок? добавим через JS)
+    // Способ 2: Через свойство onclick (JavaScript)
+    const btnClick = document.getElementById('btn-click');
+    btnClick.onclick = function(event) {
+        logEvent(event);
+        alert('Кнопка нажата!');
+    };
+    
+    // Способ 3: Через addEventListener (рекомендуемый способ)
+    const btnDblClick = document.getElementById('btn-dblclick');
+    btnDblClick.addEventListener('dblclick', logEvent);
+    btnDblClick.addEventListener('dblclick', function() {
+        console.log('[ДОП.ОБРАБОТЧИК] Двойной клик!');
+    });
+    
+    // Событие наведения мыши (mouseenter + mouseleave)
+    const btnMouse = document.getElementById('btn-mouse');
+    btnMouse.addEventListener('mouseenter', logEvent);
+    btnMouse.addEventListener('mouseleave', logEvent);
+    
+    // Событие фокуса input
+    const inputFocus = document.getElementById('input-focus');
+    inputFocus.addEventListener('focus', logEvent);
+    inputFocus.addEventListener('blur', logEvent);
+    
+    // Событие изменения select
+    const selectChange = document.getElementById('select-change');
+    selectChange.addEventListener('change', logEvent);
+    
+    // Событие для изображений (клик)
+    const demoImages = document.querySelectorAll('.demo-image');
+    demoImages.forEach(img => {
+        img.addEventListener('click', function(event) {
+            logEvent(event);
+            console.log(`Нажато изображение: ${this.alt}`);
+        });
+    });
+    
+    
+    // ============================================
+    // 3. СЛАЙДЕР (перелистывание картинок)
+    // ============================================
+    
+    // Массив изображений для слайдера (можно свои картинки)
+    const slides = [
+        "https://via.placeholder.com/400x300/6f4e37/ffffff?text=Эспрессо",
+        "https://via.placeholder.com/400x300/d4a373/3e2723?text=Капучино",
+        "https://via.placeholder.com/400x300/e6d5b8/6f4e37?text=Латте",
+        "https://via.placeholder.com/400x300/ffd966/3e2723?text=Раф+кофе"
+    ];
+    
+    const slideTitles = [
+        "Эспрессо - классика итальянского кофе",
+        "Капучино - с нежной молочной пенкой",
+        "Латте - для любителей молочного кофе",
+        "Раф-кофе - авторский напиток с ванилью"
+    ];
+    
+    let currentSlide = 0;
+    const sliderImg = document.getElementById('slider');
+    const slideIndex = document.getElementById('slide-index');
+    
+    function updateSlide() {
+        sliderImg.src = slides[currentSlide];
+        sliderImg.alt = slideTitles[currentSlide];
+        slideIndex.textContent = `Изображение ${currentSlide + 1} из ${slides.length} - ${slideTitles[currentSlide]}`;
+        console.log(`[СЛАЙДЕР] Показано изображение ${currentSlide + 1}: ${slideTitles[currentSlide]}`);
+    }
+    
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        updateSlide();
+    }
+    
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        updateSlide();
+    }
+    
+    // Добавляем обработчики для кнопок
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    
+    prevBtn.addEventListener('click', prevSlide);
+    nextBtn.addEventListener('click', nextSlide);
+    
+    // Дополнительно: добавляем обработчик для изображения (клик = следующий слайд)
+    sliderImg.addEventListener('click', nextSlide);
+    
+    // Инициализация первого слайда
+    updateSlide();
+    
+    
+    // ============================================
+    // ДОПОЛНИТЕЛЬНО: вывод информации в консоль
+    // ============================================
+    
+    console.log("=== 7 ЗАДАНИЕ: РАБОТА С DOM И СОБЫТИЯМИ ===");
+    console.log("Страница загружена. Доступны:");
+    console.log("- Информация о ссылках, якорях и изображениях");
+    console.log("- Обработчики событий (клик, двойной клик, наведение, фокус, изменение)");
+    console.log("- Слайдер (перелистывание картинок)");
+    
+</script>
 </body>
 </html>

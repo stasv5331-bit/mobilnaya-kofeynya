@@ -53,9 +53,174 @@
         .theme-btn:hover {
             background-color: #d4a373;
         }
+        
+        /* ========== СТИЛИ ДЛЯ 7 ЗАДАНИЯ ========== */
+        .js-demo-section {
+            margin: 40px 0;
+            padding: 20px;
+            background-color: rgba(255, 248, 231, 0.9);
+            border-radius: 20px;
+        }
+        
+        .slider-container {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            background-color: rgba(212, 163, 115, 0.2);
+            border-radius: 15px;
+        }
+        
+        .slider-img {
+            max-width: 100%;
+            max-height: 300px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            border: 3px solid #d4a373;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        
+        .slider-img:hover {
+            transform: scale(1.02);
+        }
+        
+        .slider-controls {
+            margin: 15px 0;
+        }
+        
+        .slider-btn {
+            background-color: #6f4e37;
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            margin: 0 10px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .slider-btn:hover {
+            background-color: #d4a373;
+        }
+        
+        .slide-caption {
+            font-size: 1.1em;
+            color: #6f4e37;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        
+        .events-demo {
+            margin: 30px 0;
+            padding: 20px;
+            background-color: #fff5e6;
+            border-radius: 15px;
+        }
+        
+        .event-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .event-btn {
+            background-color: #d4a373;
+            color: #3e2723;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: bold;
+        }
+        
+        .event-btn:hover {
+            background-color: #6f4e37;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .event-input {
+            padding: 10px 15px;
+            border: 2px solid #d4a373;
+            border-radius: 25px;
+            width: 250px;
+            font-size: 1em;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        
+        .event-input:focus {
+            border-color: #6f4e37;
+        }
+        
+        .event-message {
+            background-color: #e6d5b8;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+            border-left: 5px solid #6f4e37;
+        }
+        
+        .page-info {
+            margin: 30px 0;
+            padding: 20px;
+            background-color: #f4e9d8;
+            border-radius: 15px;
+        }
+        
+        .info-btn {
+            background-color: #6f4e37;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        .info-output {
+            background-color: #fff8e7;
+            padding: 15px;
+            border-radius: 10px;
+            font-family: monospace;
+            font-size: 0.9em;
+            white-space: pre-wrap;
+            border: 1px solid #d4a373;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        
+        #results {
+            margin: 30px;
+            padding: 20px;
+            background-color: #f5f0e6;
+            border-radius: 15px;
+            border-left: 5px solid #6f4e37;
+        }
+        #results h2 {
+            color: #6f4e37;
+            margin-top: 0;
+        }
+        #results p {
+            background-color: #fff8e7;
+            padding: 8px 12px;
+            margin: 8px 0;
+            border-radius: 8px;
+            font-family: monospace;
+        }
     </style>
 </head>
 <body>
+    <!-- Старые якоря для document.anchors (7 задание) -->
+    <a name="about" style="display: none;"></a>
+    <a name="menu" style="display: none;"></a>
+    <a name="gallery" style="display: none;"></a>
+    <a name="contacts" style="display: none;"></a>
+    <a name="price" style="display: none;"></a>
+    
     <!-- Шапка сайта -->
     <header class="site-header">
         <div class="container">
@@ -235,6 +400,47 @@
                 </div>
             </section>
             
+            <!-- ========== 7 ЗАДАНИЕ: ДЕМОНСТРАЦИЯ DOM И СОБЫТИЙ ========== -->
+            <section class="js-demo-section">
+                <h2 class="section-title">🎮 Интерактивность (JavaScript)</h2>
+                
+                <!-- Слайдер -->
+                <div class="slider-container">
+                    <h3 class="subsection-title">🖼️ Кофейный слайдер</h3>
+                    <div class="slider-wrapper">
+                        <img id="coffee-slider" class="slider-img" src="images/content/espresso.jpg" alt="Эспрессо">
+                        <div class="slider-controls">
+                            <button id="prev-slide" class="slider-btn">← Предыдущий</button>
+                            <button id="next-slide" class="slider-btn">Следующий →</button>
+                        </div>
+                        <p id="slide-caption" class="slide-caption">Эспрессо — 30мл чистого вкуса</p>
+                    </div>
+                </div>
+                
+                <!-- Демонстрация событий -->
+                <div class="events-demo">
+                    <h3 class="subsection-title">🎯 Тестирование событий</h3>
+                    <div class="event-buttons">
+                        <button id="test-click" class="event-btn">Нажми меня</button>
+                        <button id="test-dblclick" class="event-btn">Дважды нажми</button>
+                        <button id="test-hover" class="event-btn">Наведи мышь</button>
+                        <input type="text" id="test-input" class="event-input" placeholder="Введи текст...">
+                    </div>
+                    <div id="event-message" class="event-message">
+                        <strong>🖱️ Последнее событие:</strong> <span id="last-event">Ожидание...</span>
+                    </div>
+                </div>
+                
+                <!-- Информация о странице -->
+                <div class="page-info">
+                    <h3 class="subsection-title">📊 Информация о странице</h3>
+                    <button id="show-info-btn" class="info-btn">Показать информацию</button>
+                    <div id="page-info-output" class="info-output" style="display: none;">
+                        <!-- Сюда будет выводиться информация -->
+                    </div>
+                </div>
+            </section>
+            
             <!-- Секция "Контакты" -->
             <section id="contacts" class="contacts-section">
                 <h2 class="section-title">📍 Контакты</h2>
@@ -278,8 +484,211 @@
         </div>
     </footer>
     
-    <!-- Пункт 2: Фиксированная кнопка "Наверх" (fixed) - ВНЕ скрипта! -->
+    <!-- Фиксированная кнопка "Наверх" -->
     <a href="#" class="fixed-top-btn" title="Наверх">↑</a>
+    
+    <!-- ========== 7 ЗАДАНИЕ: РАБОТА С DOM И СОБЫТИЯМИ ========== -->
+    <script>
+        "use strict";
+        
+        // ============================================
+        // 1. СЛАЙДЕР (перелистывание картинок)
+        // ============================================
+        
+        const coffeeSlides = [
+            {
+                src: "images/content/espresso.jpg",
+                caption: "☕ Эспрессо — 30мл чистого кофейного вкуса"
+            },
+            {
+                src: "images/content/cappuccino.jpg",
+                caption: "🥛 Капучино — с нежной молочной пенкой"
+            },
+            {
+                src: "images/content/latte.jpg",
+                caption: "🍮 Латте — для любителей мягкого кофе с молоком"
+            },
+            {
+                src: "images/content/coffee-van.jpg",
+                caption: "🚚 Наш кофейный фургончик — всегда на связи!"
+            }
+        ];
+        
+        let currentSlide = 0;
+        const sliderImg = document.getElementById('coffee-slider');
+        const slideCaption = document.getElementById('slide-caption');
+        const prevBtn = document.getElementById('prev-slide');
+        const nextBtn = document.getElementById('next-slide');
+        
+        function updateSlide() {
+            if (sliderImg && coffeeSlides[currentSlide]) {
+                sliderImg.src = coffeeSlides[currentSlide].src;
+                slideCaption.textContent = coffeeSlides[currentSlide].caption;
+                console.log(`[СЛАЙДЕР] Показано изображение ${currentSlide + 1}: ${coffeeSlides[currentSlide].caption}`);
+            }
+        }
+        
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % coffeeSlides.length;
+            updateSlide();
+        }
+        
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + coffeeSlides.length) % coffeeSlides.length;
+            updateSlide();
+        }
+        
+        if (prevBtn && nextBtn && sliderImg) {
+            prevBtn.addEventListener('click', prevSlide);
+            nextBtn.addEventListener('click', nextSlide);
+            sliderImg.addEventListener('click', nextSlide);
+            updateSlide();
+        }
+        
+        // ============================================
+        // 2. ОБРАБОТЧИКИ СОБЫТИЙ
+        // ============================================
+        
+        const lastEventSpan = document.getElementById('last-event');
+        
+        function logEvent(event, customMessage = null) {
+            const eventType = event.type;
+            const target = event.target;
+            const tagName = target.tagName;
+            const id = target.id || "без id";
+            const text = target.textContent || target.value || target.placeholder || "нет текста";
+            
+            let message = customMessage || `Событие: ${eventType} | Элемент: ${tagName}#${id} | Содержимое: ${text.substring(0, 40)}`;
+            
+            if (lastEventSpan) {
+                lastEventSpan.textContent = message;
+            }
+            console.log(`[СОБЫТИЕ] ${message}`);
+        }
+        
+        // Кнопка "Нажми меня"
+        const clickBtn = document.getElementById('test-click');
+        if (clickBtn) {
+            clickBtn.onclick = function(event) {
+                logEvent(event, '🔘 Кнопка нажата!');
+                alert('☕ Спасибо за клик!');
+            };
+        }
+        
+        // Кнопка "Дважды нажми"
+        const dblClickBtn = document.getElementById('test-dblclick');
+        if (dblClickBtn) {
+            dblClickBtn.addEventListener('dblclick', function(event) {
+                logEvent(event, '🔄 Двойной клик!');
+            });
+        }
+        
+        // Кнопка "Наведи мышь"
+        const hoverBtn = document.getElementById('test-hover');
+        if (hoverBtn) {
+            hoverBtn.addEventListener('mouseenter', function(event) {
+                logEvent(event, '🐭 Мышь наведена на кнопку');
+                hoverBtn.style.transform = 'scale(1.05)';
+            });
+            hoverBtn.addEventListener('mouseleave', function(event) {
+                logEvent(event, '🐭 Мышь ушла с кнопки');
+                hoverBtn.style.transform = 'scale(1)';
+            });
+        }
+        
+        // Поле ввода (focus/blur/input)
+        const testInput = document.getElementById('test-input');
+        if (testInput) {
+            testInput.addEventListener('focus', function(event) {
+                logEvent(event, '✏️ Поле ввода получило фокус');
+            });
+            testInput.addEventListener('blur', function(event) {
+                logEvent(event, '✏️ Поле ввода потеряло фокус');
+            });
+            testInput.addEventListener('input', function(event) {
+                logEvent(event, `✏️ Введено: "${testInput.value}"`);
+            });
+        }
+        
+        // ============================================
+        // 3. ИНФОРМАЦИЯ О ССЫЛКАХ, ИЗОБРАЖЕНИЯХ, ЯКОРЯХ
+        // ============================================
+        
+        const showInfoBtn = document.getElementById('show-info-btn');
+        const infoOutput = document.getElementById('page-info-output');
+        
+        function getPageInfo() {
+            let info = "📊 ИНФОРМАЦИЯ О СТРАНИЦЕ\n\n";
+            
+            // ССЫЛКИ (links) - все теги <a> с атрибутом href
+            const links = document.links;
+            info += `🔗 ССЫЛКИ (${links.length} шт.):\n`;
+            if (links.length === 0) {
+                info += "   (нет ссылок)\n";
+            } else {
+                for (let i = 0; i < links.length; i++) {
+                    const text = links[i].textContent?.trim() || "без текста";
+                    const href = links[i].href || "без href";
+                    info += `   ${i+1}. "${text}" → ${href}\n`;
+                }
+            }
+            info += "\n";
+            
+            // ЯКОРЯ (anchors) - теги <a> с атрибутом name
+            const anchors = document.anchors;
+            info += `📍 ЯКОРЯ (${anchors.length} шт.):\n`;
+            if (anchors.length === 0) {
+                info += "   (нет якорей)\n";
+            } else {
+                for (let i = 0; i < anchors.length; i++) {
+                    info += `   ${i+1}. name="${anchors[i].name}"\n`;
+                }
+            }
+            info += "\n";
+            
+            // ИЗОБРАЖЕНИЯ (images)
+            const images = document.images;
+            info += `🖼️ ИЗОБРАЖЕНИЯ (${images.length} шт.):\n`;
+            if (images.length === 0) {
+                info += "   (нет изображений)\n";
+            } else {
+                for (let i = 0; i < images.length; i++) {
+                    const alt = images[i].alt || "без alt";
+                    const src = images[i].src || "без src";
+                    info += `   ${i+1}. alt="${alt}"\n`;
+                    info += `      src="${src.substring(src.lastIndexOf('/') + 1)}"\n`;
+                }
+            }
+            info += "\n";
+            
+            // ЗАГОЛОВКИ (дополнительно)
+            const headers = document.querySelectorAll('h1, h2, h3');
+            info += `📌 ЗАГОЛОВКИ (${headers.length} шт.):\n`;
+            for (let i = 0; i < headers.length && i < 10; i++) {
+                info += `   ${i+1}. ${headers[i].tagName}: "${headers[i].textContent?.trim().substring(0, 50)}"\n`;
+            }
+            
+            return info;
+        }
+        
+        if (showInfoBtn && infoOutput) {
+            showInfoBtn.addEventListener('click', function() {
+                const info = getPageInfo();
+                infoOutput.innerHTML = info.replace(/\n/g, '<br>');
+                infoOutput.style.display = 'block';
+                console.log("=== ИНФОРМАЦИЯ О СТРАНИЦЕ ===\n" + info);
+            });
+        }
+        
+        // Выводим информацию в консоль при загрузке страницы
+        window.addEventListener('load', function() {
+            console.log("=== 7 ЗАДАНИЕ: РАБОТА С DOM И СОБЫТИЯМИ ===");
+            console.log("Страница загружена!");
+            console.log(getPageInfo());
+        });
+        
+        console.log("✅ JavaScript для 7 задания загружен!");
+    </script>
     
     <!-- JavaScript для переключения тем -->
     <script>
@@ -296,5 +705,8 @@
             }
         }
     </script>
+    
+    <!-- 6 задание: функции -->
+    <script src="js/main.js"></script>
 </body>
 </html>
