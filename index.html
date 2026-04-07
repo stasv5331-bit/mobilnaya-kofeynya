@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- Мета-теги -->
     <title>Мобильная кофейня "Кофе на колесах" | Свежий кофе с собой в Красноярске</title>
     <meta name="author" content="Власов Станислав">
     <meta name="date" content="2026-03-02">
@@ -14,13 +13,9 @@
     <meta name="robots" content="index, follow">
     <meta name="contact" content="+7 (995) 530-44-88">
     
-    <!-- ОСНОВНОЙ стилевой файл (связывание) -->
     <link rel="stylesheet" href="css/style.css" title="Светлая тема" id="theme-link">
-    
-    <!-- АЛЬТЕРНАТИВНЫЙ стилевой файл (отключен по умолчанию) -->
     <link rel="stylesheet" href="css/alternative-style.css" title="Тёмная тема" disabled id="alt-theme-link">
     
-    <!-- ВНЕДРЕННЫЙ стиль -->
     <style>
         .special-note {
             background-color: #ffd966;
@@ -33,7 +28,6 @@
             color: #3e2723;
         }
         
-        /* Кнопка переключения темы */
         .theme-switcher {
             text-align: center;
             margin: 20px 0;
@@ -54,7 +48,6 @@
             background-color: #d4a373;
         }
         
-        /* ========== СТИЛИ ДЛЯ 7 ЗАДАНИЯ ========== */
         .js-demo-section {
             margin: 40px 0;
             padding: 20px;
@@ -200,10 +193,12 @@
             border-radius: 15px;
             border-left: 5px solid #6f4e37;
         }
+        
         #results h2 {
             color: #6f4e37;
             margin-top: 0;
         }
+        
         #results p {
             background-color: #fff8e7;
             padding: 8px 12px;
@@ -211,27 +206,258 @@
             border-radius: 8px;
             font-family: monospace;
         }
+        
+        .objects-demo {
+            padding: 10px;
+        }
+        
+        .objects-info {
+            background-color: #fff5e6;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 5px solid #6f4e37;
+        }
+        
+        .objects-info h3 {
+            color: #6f4e37;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        
+        .objects-info h4 {
+            color: #8b5a2b;
+            margin: 15px 0 10px 0;
+            border-bottom: 1px solid #d4a373;
+            padding-bottom: 5px;
+        }
+        
+        .objects-section {
+            margin: 20px 0;
+        }
+        
+        .objects-section ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        
+        .objects-section li {
+            margin: 5px 0;
+        }
+        
+        .objects-console-note {
+            background-color: #e6d5b8;
+            padding: 12px;
+            border-radius: 8px;
+            margin-top: 20px;
+            font-size: 0.9em;
+        }
+        
+        .objects-console-note ul {
+            margin: 5px 0 0 20px;
+        }
+        
+        /* 9 задание: To-Do List */
+        .todo-container {
+            background-color: #fff5e6;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+        
+        .todo-input-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .todo-input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 2px solid #d4a373;
+            border-radius: 25px;
+            font-size: 1em;
+            outline: none;
+        }
+        
+        .todo-input:focus {
+            border-color: #6f4e37;
+        }
+        
+        .todo-add-btn {
+            background-color: #6f4e37;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        
+        .todo-add-btn:hover {
+            background-color: #d4a373;
+        }
+        
+        .todo-filters {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            background-color: #e6d5b8;
+            color: #3e2723;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+        
+        .filter-btn.active {
+            background-color: #6f4e37;
+            color: white;
+        }
+        
+        .filter-btn:hover {
+            background-color: #d4a373;
+        }
+        
+        .todo-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px 0;
+        }
+        
+        .todo-item {
+            display: flex;
+            align-items: center;
+            padding: 12px 15px;
+            background-color: #fff8e7;
+            border-radius: 10px;
+            margin-bottom: 8px;
+        }
+        
+        .todo-item.completed .todo-text {
+            text-decoration: line-through;
+            color: #999;
+        }
+        
+        .todo-checkbox {
+            margin-right: 15px;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+        
+        .todo-text {
+            flex: 1;
+            font-size: 1em;
+        }
+        
+        .todo-delete {
+            background-color: #ff6b6b;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+        
+        .todo-delete:hover {
+            background-color: #ff4444;
+        }
+        
+        .todo-stats {
+            padding-top: 15px;
+            border-top: 1px solid #d4a373;
+            color: #6f4e37;
+            font-weight: bold;
+        }
+        
+        /* 9 задание: Галерея */
+        .gallery-container {
+            margin: 20px 0;
+        }
+        
+        .gallery-thumbnails {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .gallery-thumb {
+            width: 150px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s;
+            border: 2px solid #d4a373;
+        }
+        
+        .gallery-thumb:hover {
+            transform: scale(1.05);
+        }
+        
+        .image-modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+        }
+        
+        .modal-image {
+            margin: auto;
+            display: block;
+            max-width: 80%;
+            max-height: 80%;
+            margin-top: 50px;
+            border-radius: 10px;
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        .modal-close:hover {
+            color: #d4a373;
+        }
+        
+        .modal-caption {
+            margin: auto;
+            display: block;
+            text-align: center;
+            color: #ccc;
+            padding: 10px 0;
+            font-size: 1.2em;
+        }
     </style>
 </head>
 <body>
-    <!-- Старые якоря для document.anchors (7 задание) -->
     <a name="about" style="display: none;"></a>
     <a name="menu" style="display: none;"></a>
     <a name="gallery" style="display: none;"></a>
     <a name="contacts" style="display: none;"></a>
     <a name="price" style="display: none;"></a>
     
-    <!-- Шапка сайта -->
     <header class="site-header">
         <div class="container">
             <h1 class="site-title">Мобильная кофейня <span class="highlight">"Кофе на колесах"</span></h1>
-            
-            <!-- Кнопка переключения темы -->
             <div class="theme-switcher">
                 <button class="theme-btn" onclick="switchTheme()">Переключить тему</button>
             </div>
-            
-            <!-- Навигация -->
             <nav class="main-nav">
                 <ul class="nav-list">
                     <li><a href="#about">О нас</a></li>
@@ -245,457 +471,168 @@
         </div>
     </header>
 
-    <!-- Основное содержание -->
     <main class="site-main">
         <div class="container">
-            
-            <!-- ВСТРОЕННЫЙ стиль (inline) -->
             <p style="background-color: #e6d5b8; padding: 10px; border: 2px solid #6f4e37; border-radius: 5px; text-align: center; font-size: 1.2em; margin-bottom: 30px; color: #3e2723;">
                 <b>☕ Акция!</b> Каждое утро с 8:00 до 10:00 скидка 20% на любой кофе
             </p>
             
-            <!-- Секция "О нас" -->
             <section id="about" class="about-section">
                 <h2 class="section-title">☕ О нашей кофейне</h2>
-                
                 <div class="about-content">
                     <div class="image-container">
-                        <img src="images/content/coffee-van.jpg" 
-                             alt="Наш стильный кофейный фургончик" 
-                             class="about-image">
+                        <img src="images/content/coffee-van.jpg" alt="Наш стильный кофейный фургончик" class="about-image">
                     </div>
-                    
                     <div class="about-text">
-                        <p class="lead"><big><b>Добро пожаловать</b></big> в нашу мобильную кофейню! Мы — команда профессиональных бариста, которые решили, что <i>вкусный кофе</i> должен быть <u>доступен каждому</u>, где бы он ни находился.</p>
-                        
-                        <p><tt>Наш фургончик</tt> можно найти по адресу: <b>г. Красноярск, улица Ладо Кецховели, 22а</b>. Работаем ежедневно с <strong>8:00 до 22:00</strong>. Мы используем только <em>свежеобжаренные зерна</em> высшего сорта из Бразилии, Эфиопии и Колумбии.</p>
-                        
+                        <p class="lead"><big><b>Добро пожаловать</b></big> в нашу мобильную кофейню! Мы — команда профессиональных бариста.</p>
+                        <p><tt>Наш фургончик</tt> можно найти по адресу: <b>г. Красноярск, улица Ладо Кецховели, 22а</b>. Работаем ежедневно с <strong>8:00 до 22:00</strong>.</p>
                         <hr class="divider">
-                        
-                        <p class="special-font">Каждый напиток мы готовим с <span class="highlight">душой</span>, соблюдая все тонкости обжарки и заваривания. В нашем меню вы найдете как классические позиции, так и <small>авторские рецепты</small> от наших бариста.</p>
-                        
-                        <p class="special-chars">
-                            <b>Наши гарантии:</b> только свежие продукты &copy; 2026<br>
-                            Температура подачи: 88&deg;C - 92&deg;C<br>
-                            Мы работаем &laquo;от сердца к сердцу&raquo;<br>
-                            Кофеин: C<sub>8</sub>H<sub>10</sub>N<sub>4</sub>O<sub>2</sub><br>
-                            Площадь нашего фургона: 8м<sup>2</sup> уюта
-                        </p>
+                        <p class="special-chars"><b>Наши гарантии:</b> только свежие продукты &copy; 2026<br>Кофеин: C<sub>8</sub>H<sub>10</sub>N<sub>4</sub>O<sub>2</sub><br>Площадь нашего фургона: 8м<sup>2</sup> уюта</p>
                     </div>
                 </div>
             </section>
             
             <hr class="section-separator" noshade size="4" color="#6f4e37" width="80%">
             
-            <!-- НОВАЯ СЕКЦИЯ: Почему выбирают нас (float колонки + clear) -->
             <section class="features-section">
                 <h2 class="section-title">✨ Почему выбирают нас</h2>
-                
                 <div class="features-container clearfix">
-                    <div class="feature-column">
-                        <h3>☕ Свежая обжарка</h3>
-                        <p>Мы обжариваем зерна каждые 3 дня. Только так можно раскрыть настоящий вкус кофе из Бразилии, Эфиопии и Колумбии.</p>
-                    </div>
-                    
-                    <div class="feature-column">
-                        <h3>🚚 Мобильность</h3>
-                        <p>Наш фургончик всегда там, где вы. Следите за нашими перемещениями в соцсетях. Сегодня работаем на Ладо Кецховели, 22а.</p>
-                    </div>
-                    
-                    <div class="feature-column">
-                        <h3>💚 Забота о природе</h3>
-                        <p>Мы используем биоразлагаемые стаканчики и дарим скидку 20% за свою кружку. Вместе сделаем мир чище!</p>
-                    </div>
+                    <div class="feature-column"><h3>☕ Свежая обжарка</h3><p>Мы обжариваем зерна каждые 3 дня.</p></div>
+                    <div class="feature-column"><h3>🚚 Мобильность</h3><p>Наш фургончик всегда там, где вы.</p></div>
+                    <div class="feature-column"><h3>💚 Забота о природе</h3><p>Дарим скидку 20% за свою кружку.</p></div>
                 </div>
-                
-                <!-- Демонстрация clear -->
-                <div class="clear-demo">
-                    <p>* Акция на скидку за свою кружку действует ежедневно с 8:00 до 22:00</p>
-                </div>
+                <div class="clear-demo"><p>* Акция на скидку за свою кружку действует ежедневно</p></div>
             </section>
             
-            <!-- Секция "Меню" -->
             <section id="menu" class="menu-section">
                 <h2 class="section-title">📋 Наше меню</h2>
-                
-                <div class="special-note">
-                    ⭐ Попробуйте наш новый авторский напиток "Красноярский завтрак" ⭐
-                </div>
-                
+                <div class="special-note">⭐ Попробуйте наш новый авторский напиток "Красноярский завтрак" ⭐</div>
                 <h3 class="subsection-title">Кофейная карта:</h3>
                 <ul class="coffee-list">
-                    <li class="coffee-item" style="position: relative;">
-                        <span class="hit-label">ХИТ</span>
-                        <b>Эспрессо</b> — <i>30мл</i> чистого вкуса и энергии
-                    </li>
-                    <li class="coffee-item"><big><b>Американо</b></big> — объемный и мягкий (200мл)</li>
-                    <li class="coffee-item"><tt>Капучино</tt> — с нежной молочной пенкой (300мл)</li>
-                    <li class="coffee-item"><small>Латте</small> — для любителей молока (400мл)</li>
-                    <li class="coffee-item"><big>Раф-кофе</big> — с ванильным сахаром и сливками</li>
-                    <li class="coffee-item"><i>Флэт Уайт</i> — двойной эспрессо с молоком</li>
+                    <li class="coffee-item" style="position: relative;"><span class="hit-label">ХИТ</span><b>Эспрессо</b> — <i>30мл</i></li>
+                    <li class="coffee-item"><big><b>Американо</b></big> — объемный и мягкий</li>
+                    <li class="coffee-item"><tt>Капучино</tt> — с нежной молочной пенкой</li>
+                    <li class="coffee-item"><small>Латте</small> — для любителей молока</li>
                 </ul>
-                
-                <h3 class="subsection-title">Добавки (выберите до 3-х):</h3>
-                <ol type="A" class="addons-list">
-                    <li>Сироп (карамель, орех, ваниль, кокос)</li>
-                    <li>Корица (палочка или молотая)</li>
-                    <li>Взбитые сливки</li>
-                    <li>Маршмеллоу</li>
-                    <li>Шоколадная крошка</li>
-                    <li>Мед</li>
-                </ol>
-                
-                <h3 class="subsection-title">Десерты:</h3>
-                <ol type="I" class="desserts-list">
-                    <li>Чизкейк "Нью-Йорк"</li>
-                    <li>Брауни с орехами</li>
-                    <li>Круассан миндальный</li>
-                    <li>Сырники со сгущенкой</li>
-                </ol>
-                
                 <hr width="50%" align="center" class="menu-divider">
-                
-                <!-- Секция с ценами -->
                 <div id="price" class="price-section">
                     <h3 class="subsection-title">💰 Актуальные цены:</h3>
-                    
                     <dl class="price-list">
-                        <dt><b>Эспрессо</b></dt>
-                        <dd>150 ₽ — 180 ₽ (двойной)</dd>
-                        <dt><b>Капучино</b></dt>
-                        <dd>250 ₽ (классический) / 300 ₽ (авторский)</dd>
-                        <dt><b>Латте</b></dt>
-                        <dd>270 ₽ — 320 ₽ (с сиропом)</dd>
-                        <dt><b>Авторские напитки</b></dt>
-                        <dd>от 350 ₽</dd>
+                        <dt><b>Эспрессо</b></dt><dd>150 ₽</dd>
+                        <dt><b>Капучино</b></dt><dd>250 ₽</dd>
+                        <dt><b>Латте</b></dt><dd>270 ₽</dd>
                     </dl>
                 </div>
             </section>
             
-            <!-- Секция "Фотогалерея" -->
             <section id="gallery" class="gallery-section">
                 <h2 class="section-title">📸 Фотогалерея</h2>
-                
                 <div class="gallery-grid">
-                    <figure class="gallery-item">
-                        <div class="gallery-image-container">
-                            <img src="images/content/espresso.jpg" alt="Эспрессо" class="gallery-image">
-                        </div>
-                        <figcaption>Наш фирменный эспрессо</figcaption>
-                    </figure>
-                    
-                    <figure class="gallery-item">
-                        <div class="gallery-image-container">
-                            <img src="images/content/cappuccino.jpg" alt="Капучино" class="gallery-image">
-                        </div>
-                        <figcaption>Капучино с латте-артом</figcaption>
-                    </figure>
-                    
-                    <figure class="gallery-item">
-                        <div class="gallery-image-container">
-                            <img src="images/content/latte.jpg" alt="Латте" class="gallery-image">
-                        </div>
-                        <figcaption>Латте с карамельным сиропом</figcaption>
-                    </figure>
+                    <figure class="gallery-item"><div class="gallery-image-container"><img src="images/content/espresso.jpg" alt="Эспрессо" class="gallery-image"></div><figcaption>Эспрессо</figcaption></figure>
+                    <figure class="gallery-item"><div class="gallery-image-container"><img src="images/content/cappuccino.jpg" alt="Капучино" class="gallery-image"></div><figcaption>Капучино</figcaption></figure>
+                    <figure class="gallery-item"><div class="gallery-image-container"><img src="images/content/latte.jpg" alt="Латте" class="gallery-image"></div><figcaption>Латте</figcaption></figure>
                 </div>
             </section>
             
-            <!-- ========== 7 ЗАДАНИЕ: ДЕМОНСТРАЦИЯ DOM И СОБЫТИЙ ========== -->
+            <!-- 7 задание -->
             <section class="js-demo-section">
                 <h2 class="section-title">🎮 Интерактивность (JavaScript)</h2>
-                
-                <!-- Слайдер -->
                 <div class="slider-container">
                     <h3 class="subsection-title">🖼️ Кофейный слайдер</h3>
-                    <div class="slider-wrapper">
-                        <img id="coffee-slider" class="slider-img" src="images/content/espresso.jpg" alt="Эспрессо">
-                        <div class="slider-controls">
-                            <button id="prev-slide" class="slider-btn">← Предыдущий</button>
-                            <button id="next-slide" class="slider-btn">Следующий →</button>
-                        </div>
-                        <p id="slide-caption" class="slide-caption">Эспрессо — 30мл чистого вкуса</p>
+                    <img id="coffee-slider" class="slider-img" src="images/content/espresso.jpg" alt="Эспрессо">
+                    <div class="slider-controls">
+                        <button id="prev-slide" class="slider-btn">← Предыдущий</button>
+                        <button id="next-slide" class="slider-btn">Следующий →</button>
                     </div>
+                    <p id="slide-caption" class="slide-caption">Эспрессо — 30мл чистого вкуса</p>
                 </div>
-                
-                <!-- Демонстрация событий -->
                 <div class="events-demo">
                     <h3 class="subsection-title">🎯 Тестирование событий</h3>
-                    <div class="event-buttons">
-                        <button id="test-click" class="event-btn">Нажми меня</button>
-                        <button id="test-dblclick" class="event-btn">Дважды нажми</button>
-                        <button id="test-hover" class="event-btn">Наведи мышь</button>
-                        <input type="text" id="test-input" class="event-input" placeholder="Введи текст...">
-                    </div>
-                    <div id="event-message" class="event-message">
-                        <strong>🖱️ Последнее событие:</strong> <span id="last-event">Ожидание...</span>
-                    </div>
+                    <button id="test-click" class="event-btn">Нажми меня</button>
+                    <button id="test-dblclick" class="event-btn">Дважды нажми</button>
+                    <button id="test-hover" class="event-btn">Наведи мышь</button>
+                    <input type="text" id="test-input" class="event-input" placeholder="Введи текст...">
+                    <div id="event-message" class="event-message"><strong>🖱️ Последнее событие:</strong> <span id="last-event">Ожидание...</span></div>
                 </div>
-                
-                <!-- Информация о странице -->
                 <div class="page-info">
                     <h3 class="subsection-title">📊 Информация о странице</h3>
                     <button id="show-info-btn" class="info-btn">Показать информацию</button>
-                    <div id="page-info-output" class="info-output" style="display: none;">
-                        <!-- Сюда будет выводиться информация -->
-                    </div>
+                    <div id="page-info-output" class="info-output" style="display: none;"></div>
                 </div>
             </section>
             
-            <!-- Секция "Контакты" -->
+            <!-- 8 задание -->
+            <section class="js-demo-section">
+                <h2 class="section-title">📚 Объекты в JavaScript</h2>
+                <div class="objects-demo">
+                    <p><strong>Демонстрация объектов:</strong> создание объектов разными способами, доступ к свойствам, собственный конструктор, расширение встроенных типов.</p>
+                    <div id="objects-info" class="objects-info"><p>Загрузка информации...</p></div>
+                    <div class="objects-console-note"><p>📌 <strong>Подробности в консоли (F12)</strong></p></div>
+                </div>
+            </section>
+            
+            <!-- 9 задание: To-Do List -->
+            <section class="js-demo-section">
+                <h2 class="section-title">📝 Список задач (To-Do List)</h2>
+                <div class="todo-container">
+                    <div class="todo-input-group">
+                        <input type="text" id="todo-input" class="todo-input" placeholder="Введите новую задачу...">
+                        <button id="add-todo-btn" class="todo-add-btn">➕ Добавить</button>
+                    </div>
+                    <div class="todo-filters">
+                        <button id="filter-all" class="filter-btn active">Все</button>
+                        <button id="filter-active" class="filter-btn">Активные</button>
+                        <button id="filter-completed" class="filter-btn">Выполненные</button>
+                    </div>
+                    <ul id="todo-list" class="todo-list">
+                        <li class="todo-item"><input type="checkbox" class="todo-checkbox"><span class="todo-text">Заказать свежие зерна</span><button class="todo-delete">🗑️</button></li>
+                        <li class="todo-item completed"><input type="checkbox" class="todo-checkbox" checked><span class="todo-text">Помыть кофемашину</span><button class="todo-delete">🗑️</button></li>
+                        <li class="todo-item"><input type="checkbox" class="todo-checkbox"><span class="todo-text">Подготовить меню на завтра</span><button class="todo-delete">🗑️</button></li>
+                    </ul>
+                    <div class="todo-stats"><span id="todo-count">3</span> задач осталось</div>
+                </div>
+            </section>
+            
+            <!-- 9 задание: Галерея с модальным окном (работает с картинками из интернета) -->
+            <section class="js-demo-section">
+                <h2 class="section-title">🖼️ Галерея (клик на картинку для увеличения)</h2>
+                <div class="gallery-container">
+                    <div class="gallery-thumbnails" id="gallery-thumbnails"></div>
+                </div>
+                <div id="image-modal" class="image-modal">
+                    <span class="modal-close">&times;</span>
+                    <img class="modal-image" id="modal-image">
+                    <div class="modal-caption" id="modal-caption"></div>
+                </div>
+            </section>
+            
             <section id="contacts" class="contacts-section">
                 <h2 class="section-title">📍 Контакты</h2>
-                
-                <p style="font-family: 'Courier New', monospace; font-size: 16px;">
-                    <b>Адрес:</b> г. Красноярск, улица Ладо Кецховели, 22а
-                </p>
-                <p style="font-family: Georgia, serif; font-size: 18px; color: #5d3a1a;">
-                    <b>Часы работы:</b> Ежедневно с 8:00 до 22:00
-                </p>
-                <p style="font-family: Arial, sans-serif; font-size: 20px; font-weight: bold;">
-                    <b>Телефон для связи:</b> <a href="tel:+79955304488" class="phone-link">+7 (995) 530-44-88</a>
-                </p>
-                
-                <div class="developer-contact">
-                    <p><b>Разработчик сайта:</b> Власов Станислав</p>
-                    <p><b>Телефон разработчика:</b> <a href="tel:+79955304488">+7 (995) 530-44-88</a></p>
-                </div>
-                
-                <div class="links-block">
-                    <h3 class="subsection-title">🔗 Наши друзья и партнеры:</h3>
-                    <ul class="friends-list">
-                        <li><a href="https://coffeelike.ru/" target="_blank">Coffee Like</a></li>
-                        <li><a href="https://shokoladnitsa.ru/" target="_blank">Шоколадница</a></li>
-                        <li><a href="https://www.caffeine.ru/" target="_blank">Caffeine</a></li>
-                        <li><a href="https://surfcoffee.ru/" target="_blank">Surf Coffee</a></li>
-                    </ul>
-                </div>
+                <p><b>Адрес:</b> г. Красноярск, улица Ладо Кецховели, 22а</p>
+                <p><b>Часы работы:</b> Ежедневно с 8:00 до 22:00</p>
+                <p><b>Телефон:</b> <a href="tel:+79955304488">+7 (995) 530-44-88</a></p>
+                <div class="developer-contact"><p><b>Разработчик:</b> Власов Станислав</p></div>
+                <div class="links-block"><ul class="friends-list"><li><a href="https://coffeelike.ru/" target="_blank">Coffee Like</a></li><li><a href="https://shokoladnitsa.ru/" target="_blank">Шоколадница</a></li></ul></div>
             </section>
         </div>
     </main>
 
-    <!-- Подвал сайта -->
     <footer class="site-footer">
         <div class="container">
             <div class="footer-content">
-                <p class="copyright">&copy; 2026 Мобильная кофейня "Кофе на колесах"</p>
-                <p class="developer">Сайт разработан: Власов Станислав (тел. +7 (995) 530-44-88)</p>
+                <p>&copy; 2026 Мобильная кофейня "Кофе на колесах"</p>
+                <p>Сайт разработан: Власов Станислав</p>
                 <p><a href="#top" class="back-to-top">↑ Наверх</a></p>
             </div>
         </div>
     </footer>
     
-    <!-- Фиксированная кнопка "Наверх" -->
     <a href="#" class="fixed-top-btn" title="Наверх">↑</a>
     
-    <!-- ========== 7 ЗАДАНИЕ: РАБОТА С DOM И СОБЫТИЯМИ ========== -->
-    <script>
-        "use strict";
-        
-        // ============================================
-        // 1. СЛАЙДЕР (перелистывание картинок)
-        // ============================================
-        
-        const coffeeSlides = [
-            {
-                src: "images/content/espresso.jpg",
-                caption: "☕ Эспрессо — 30мл чистого кофейного вкуса"
-            },
-            {
-                src: "images/content/cappuccino.jpg",
-                caption: "🥛 Капучино — с нежной молочной пенкой"
-            },
-            {
-                src: "images/content/latte.jpg",
-                caption: "🍮 Латте — для любителей мягкого кофе с молоком"
-            },
-            {
-                src: "images/content/coffee-van.jpg",
-                caption: "🚚 Наш кофейный фургончик — всегда на связи!"
-            }
-        ];
-        
-        let currentSlide = 0;
-        const sliderImg = document.getElementById('coffee-slider');
-        const slideCaption = document.getElementById('slide-caption');
-        const prevBtn = document.getElementById('prev-slide');
-        const nextBtn = document.getElementById('next-slide');
-        
-        function updateSlide() {
-            if (sliderImg && coffeeSlides[currentSlide]) {
-                sliderImg.src = coffeeSlides[currentSlide].src;
-                slideCaption.textContent = coffeeSlides[currentSlide].caption;
-                console.log(`[СЛАЙДЕР] Показано изображение ${currentSlide + 1}: ${coffeeSlides[currentSlide].caption}`);
-            }
-        }
-        
-        function nextSlide() {
-            currentSlide = (currentSlide + 1) % coffeeSlides.length;
-            updateSlide();
-        }
-        
-        function prevSlide() {
-            currentSlide = (currentSlide - 1 + coffeeSlides.length) % coffeeSlides.length;
-            updateSlide();
-        }
-        
-        if (prevBtn && nextBtn && sliderImg) {
-            prevBtn.addEventListener('click', prevSlide);
-            nextBtn.addEventListener('click', nextSlide);
-            sliderImg.addEventListener('click', nextSlide);
-            updateSlide();
-        }
-        
-        // ============================================
-        // 2. ОБРАБОТЧИКИ СОБЫТИЙ
-        // ============================================
-        
-        const lastEventSpan = document.getElementById('last-event');
-        
-        function logEvent(event, customMessage = null) {
-            const eventType = event.type;
-            const target = event.target;
-            const tagName = target.tagName;
-            const id = target.id || "без id";
-            const text = target.textContent || target.value || target.placeholder || "нет текста";
-            
-            let message = customMessage || `Событие: ${eventType} | Элемент: ${tagName}#${id} | Содержимое: ${text.substring(0, 40)}`;
-            
-            if (lastEventSpan) {
-                lastEventSpan.textContent = message;
-            }
-            console.log(`[СОБЫТИЕ] ${message}`);
-        }
-        
-        // Кнопка "Нажми меня"
-        const clickBtn = document.getElementById('test-click');
-        if (clickBtn) {
-            clickBtn.onclick = function(event) {
-                logEvent(event, '🔘 Кнопка нажата!');
-                alert('☕ Спасибо за клик!');
-            };
-        }
-        
-        // Кнопка "Дважды нажми"
-        const dblClickBtn = document.getElementById('test-dblclick');
-        if (dblClickBtn) {
-            dblClickBtn.addEventListener('dblclick', function(event) {
-                logEvent(event, '🔄 Двойной клик!');
-            });
-        }
-        
-        // Кнопка "Наведи мышь"
-        const hoverBtn = document.getElementById('test-hover');
-        if (hoverBtn) {
-            hoverBtn.addEventListener('mouseenter', function(event) {
-                logEvent(event, '🐭 Мышь наведена на кнопку');
-                hoverBtn.style.transform = 'scale(1.05)';
-            });
-            hoverBtn.addEventListener('mouseleave', function(event) {
-                logEvent(event, '🐭 Мышь ушла с кнопки');
-                hoverBtn.style.transform = 'scale(1)';
-            });
-        }
-        
-        // Поле ввода (focus/blur/input)
-        const testInput = document.getElementById('test-input');
-        if (testInput) {
-            testInput.addEventListener('focus', function(event) {
-                logEvent(event, '✏️ Поле ввода получило фокус');
-            });
-            testInput.addEventListener('blur', function(event) {
-                logEvent(event, '✏️ Поле ввода потеряло фокус');
-            });
-            testInput.addEventListener('input', function(event) {
-                logEvent(event, `✏️ Введено: "${testInput.value}"`);
-            });
-        }
-        
-        // ============================================
-        // 3. ИНФОРМАЦИЯ О ССЫЛКАХ, ИЗОБРАЖЕНИЯХ, ЯКОРЯХ
-        // ============================================
-        
-        const showInfoBtn = document.getElementById('show-info-btn');
-        const infoOutput = document.getElementById('page-info-output');
-        
-        function getPageInfo() {
-            let info = "📊 ИНФОРМАЦИЯ О СТРАНИЦЕ\n\n";
-            
-            // ССЫЛКИ (links) - все теги <a> с атрибутом href
-            const links = document.links;
-            info += `🔗 ССЫЛКИ (${links.length} шт.):\n`;
-            if (links.length === 0) {
-                info += "   (нет ссылок)\n";
-            } else {
-                for (let i = 0; i < links.length; i++) {
-                    const text = links[i].textContent?.trim() || "без текста";
-                    const href = links[i].href || "без href";
-                    info += `   ${i+1}. "${text}" → ${href}\n`;
-                }
-            }
-            info += "\n";
-            
-            // ЯКОРЯ (anchors) - теги <a> с атрибутом name
-            const anchors = document.anchors;
-            info += `📍 ЯКОРЯ (${anchors.length} шт.):\n`;
-            if (anchors.length === 0) {
-                info += "   (нет якорей)\n";
-            } else {
-                for (let i = 0; i < anchors.length; i++) {
-                    info += `   ${i+1}. name="${anchors[i].name}"\n`;
-                }
-            }
-            info += "\n";
-            
-            // ИЗОБРАЖЕНИЯ (images)
-            const images = document.images;
-            info += `🖼️ ИЗОБРАЖЕНИЯ (${images.length} шт.):\n`;
-            if (images.length === 0) {
-                info += "   (нет изображений)\n";
-            } else {
-                for (let i = 0; i < images.length; i++) {
-                    const alt = images[i].alt || "без alt";
-                    const src = images[i].src || "без src";
-                    info += `   ${i+1}. alt="${alt}"\n`;
-                    info += `      src="${src.substring(src.lastIndexOf('/') + 1)}"\n`;
-                }
-            }
-            info += "\n";
-            
-            // ЗАГОЛОВКИ (дополнительно)
-            const headers = document.querySelectorAll('h1, h2, h3');
-            info += `📌 ЗАГОЛОВКИ (${headers.length} шт.):\n`;
-            for (let i = 0; i < headers.length && i < 10; i++) {
-                info += `   ${i+1}. ${headers[i].tagName}: "${headers[i].textContent?.trim().substring(0, 50)}"\n`;
-            }
-            
-            return info;
-        }
-        
-        if (showInfoBtn && infoOutput) {
-            showInfoBtn.addEventListener('click', function() {
-                const info = getPageInfo();
-                infoOutput.innerHTML = info.replace(/\n/g, '<br>');
-                infoOutput.style.display = 'block';
-                console.log("=== ИНФОРМАЦИЯ О СТРАНИЦЕ ===\n" + info);
-            });
-        }
-        
-        // Выводим информацию в консоль при загрузке страницы
-        window.addEventListener('load', function() {
-            console.log("=== 7 ЗАДАНИЕ: РАБОТА С DOM И СОБЫТИЯМИ ===");
-            console.log("Страница загружена!");
-            console.log(getPageInfo());
-        });
-        
-        console.log("✅ JavaScript для 7 задания загружен!");
-    </script>
-    
-    <!-- JavaScript для переключения тем -->
     <script>
         function switchTheme() {
             const mainTheme = document.getElementById('theme-link');
             const altTheme = document.getElementById('alt-theme-link');
-            
             if (altTheme.disabled) {
                 altTheme.disabled = false;
                 mainTheme.disabled = true;
@@ -706,7 +643,222 @@
         }
     </script>
     
-    <!-- 6 задание: функции -->
+    <script>
+        // 7 задание: Слайдер
+        const coffeeSlides = [
+            { src: "images/content/espresso.jpg", caption: "☕ Эспрессо — 30мл чистого кофейного вкуса" },
+            { src: "images/content/cappuccino.jpg", caption: "🥛 Капучино — с нежной молочной пенкой" },
+            { src: "images/content/latte.jpg", caption: "🍮 Латте — для любителей мягкого кофе с молоком" },
+            { src: "images/content/coffee-van.jpg", caption: "🚚 Наш кофейный фургончик" }
+        ];
+        let currentSlide = 0;
+        const sliderImg = document.getElementById('coffee-slider');
+        const slideCaption = document.getElementById('slide-caption');
+        const prevBtn = document.getElementById('prev-slide');
+        const nextBtn = document.getElementById('next-slide');
+        function updateSlide() { sliderImg.src = coffeeSlides[currentSlide].src; slideCaption.textContent = coffeeSlides[currentSlide].caption; }
+        function nextSlide() { currentSlide = (currentSlide + 1) % coffeeSlides.length; updateSlide(); }
+        function prevSlide() { currentSlide = (currentSlide - 1 + coffeeSlides.length) % coffeeSlides.length; updateSlide(); }
+        if (prevBtn && nextBtn && sliderImg) {
+            prevBtn.addEventListener('click', prevSlide);
+            nextBtn.addEventListener('click', nextSlide);
+            sliderImg.addEventListener('click', nextSlide);
+            updateSlide();
+        }
+        
+        // 7 задание: События
+        const lastEventSpan = document.getElementById('last-event');
+        function logEvent(event, customMessage) {
+            let message = customMessage || `Событие: ${event.type}`;
+            if (lastEventSpan) lastEventSpan.textContent = message;
+            console.log(message);
+        }
+        const clickBtn = document.getElementById('test-click');
+        if (clickBtn) clickBtn.onclick = (e) => { logEvent(e, '🔘 Кнопка нажата!'); alert('☕ Спасибо за клик!'); };
+        const dblClickBtn = document.getElementById('test-dblclick');
+        if (dblClickBtn) dblClickBtn.addEventListener('dblclick', (e) => logEvent(e, '🔄 Двойной клик!'));
+        const hoverBtn = document.getElementById('test-hover');
+        if (hoverBtn) {
+            hoverBtn.addEventListener('mouseenter', (e) => { logEvent(e, '🐭 Мышь наведена'); hoverBtn.style.transform = 'scale(1.05)'; });
+            hoverBtn.addEventListener('mouseleave', (e) => { logEvent(e, '🐭 Мышь ушла'); hoverBtn.style.transform = 'scale(1)'; });
+        }
+        const testInput = document.getElementById('test-input');
+        if (testInput) {
+            testInput.addEventListener('focus', (e) => logEvent(e, '✏️ Поле получило фокус'));
+            testInput.addEventListener('blur', (e) => logEvent(e, '✏️ Поле потеряло фокус'));
+            testInput.addEventListener('input', (e) => logEvent(e, `✏️ Введено: "${testInput.value}"`));
+        }
+        
+        // 7 задание: Информация о странице
+        const showInfoBtn = document.getElementById('show-info-btn');
+        const infoOutput = document.getElementById('page-info-output');
+        function getPageInfo() {
+            let info = "📊 ИНФОРМАЦИЯ О СТРАНИЦЕ\n\n";
+            const links = document.links;
+            info += `🔗 ССЫЛКИ (${links.length} шт.):\n`;
+            for (let i = 0; i < links.length; i++) info += `   ${i+1}. "${links[i].textContent?.trim()}" → ${links[i].href}\n`;
+            info += "\n📍 ЯКОРЯ (0 шт.)\n\n";
+            const images = document.images;
+            info += `🖼️ ИЗОБРАЖЕНИЯ (${images.length} шт.):\n`;
+            for (let i = 0; i < images.length; i++) info += `   ${i+1}. alt="${images[i].alt}"\n`;
+            return info;
+        }
+        if (showInfoBtn && infoOutput) {
+            showInfoBtn.addEventListener('click', () => {
+                infoOutput.innerHTML = getPageInfo().replace(/\n/g, '<br>');
+                infoOutput.style.display = 'block';
+            });
+        }
+    </script>
+    
+    <!-- 9 задание: To-Do List и Галерея -->
+    <script>
+        // ========== TO-DO LIST ==========
+        const todoInput = document.getElementById('todo-input');
+        const addBtn = document.getElementById('add-todo-btn');
+        const todoList = document.getElementById('todo-list');
+        const todoCountSpan = document.getElementById('todo-count');
+        const filterAll = document.getElementById('filter-all');
+        const filterActive = document.getElementById('filter-active');
+        const filterCompleted = document.getElementById('filter-completed');
+        let currentFilter = 'all';
+        
+        function updateCount() {
+            const items = todoList.querySelectorAll('.todo-item');
+            let activeCount = 0;
+            items.forEach(item => { if (!item.querySelector('.todo-checkbox').checked) activeCount++; });
+            todoCountSpan.textContent = activeCount;
+        }
+        
+        function applyFilter() {
+            const items = todoList.querySelectorAll('.todo-item');
+            items.forEach(item => {
+                const isCompleted = item.querySelector('.todo-checkbox').checked;
+                if (currentFilter === 'all') item.style.display = 'flex';
+                else if (currentFilter === 'active') item.style.display = isCompleted ? 'none' : 'flex';
+                else item.style.display = isCompleted ? 'flex' : 'none';
+            });
+        }
+        
+        function addTask() {
+            const taskText = todoInput.value.trim();
+            if (taskText === '') { alert('Введите текст задачи!'); return; }
+            const li = document.createElement('li');
+            li.className = 'todo-item';
+            const checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            checkbox.className = 'todo-checkbox';
+            const span = document.createElement('span');
+            span.className = 'todo-text';
+            span.textContent = taskText;
+            const deleteBtn = document.createElement('button');
+            deleteBtn.className = 'todo-delete';
+            deleteBtn.textContent = '🗑️';
+            checkbox.addEventListener('change', () => {
+                if (checkbox.checked) li.classList.add('completed');
+                else li.classList.remove('completed');
+                updateCount();
+                applyFilter();
+            });
+            deleteBtn.addEventListener('click', () => { li.remove(); updateCount(); applyFilter(); });
+            li.appendChild(checkbox);
+            li.appendChild(span);
+            li.appendChild(deleteBtn);
+            todoList.appendChild(li);
+            todoInput.value = '';
+            updateCount();
+            applyFilter();
+        }
+        
+        function initTodo() {
+            const items = todoList.querySelectorAll('.todo-item');
+            items.forEach(item => {
+                const checkbox = item.querySelector('.todo-checkbox');
+                const deleteBtn = item.querySelector('.todo-delete');
+                checkbox.addEventListener('change', () => { updateCount(); applyFilter(); });
+                deleteBtn.addEventListener('click', () => { item.remove(); updateCount(); applyFilter(); });
+            });
+            updateCount();
+            applyFilter();
+        }
+        
+        if (addBtn) addBtn.addEventListener('click', addTask);
+        if (todoInput) todoInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') addTask(); });
+        if (filterAll) filterAll.addEventListener('click', () => {
+            currentFilter = 'all';
+            [filterAll, filterActive, filterCompleted].forEach(btn => btn.classList.remove('active'));
+            filterAll.classList.add('active');
+            applyFilter();
+        });
+        if (filterActive) filterActive.addEventListener('click', () => {
+            currentFilter = 'active';
+            [filterAll, filterActive, filterCompleted].forEach(btn => btn.classList.remove('active'));
+            filterActive.classList.add('active');
+            applyFilter();
+        });
+        if (filterCompleted) filterCompleted.addEventListener('click', () => {
+            currentFilter = 'completed';
+            [filterAll, filterActive, filterCompleted].forEach(btn => btn.classList.remove('active'));
+            filterCompleted.classList.add('active');
+            applyFilter();
+        });
+        initTodo();
+        
+        // ========== ГАЛЕРЕЯ (работает с картинками из интернета) ==========
+        const galleryImages = [
+           { thumb: 'images/content/espresso.jpg', full: 'images/content/espresso.jpg', title: 'Эспрессо' },
+           { thumb: 'images/content/cappuccino.jpg', full: 'images/content/cappuccino.jpg', title: 'Капучино' },
+           { thumb: 'images/content/latte.jpg', full: 'images/content/latte.jpg', title: 'Латте' },
+           { thumb: 'images/content/coffee-van.jpg', full: 'images/content/coffee-van.jpg', title: 'Наш фургончик' }
+];
+        
+        const container = document.getElementById('gallery-thumbnails');
+        const modal = document.getElementById('image-modal');
+        const modalImage = document.getElementById('modal-image');
+        const modalCaption = document.getElementById('modal-caption');
+        const modalClose = document.querySelector('.modal-close');
+        
+        if (container) {
+            galleryImages.forEach(img => {
+                const thumb = document.createElement('img');
+                thumb.src = img.thumb;
+                thumb.alt = img.title;
+                thumb.className = 'gallery-thumb';
+                thumb.addEventListener('click', () => {
+                    modal.style.display = 'block';
+                    modalImage.src = img.full;
+                    modalCaption.textContent = img.title;
+                    console.log(`Открыто изображение: ${img.title}`);
+                });
+                container.appendChild(thumb);
+            });
+        }
+        
+        if (modalClose) {
+            modalClose.addEventListener('click', () => {
+                modal.style.display = 'none';
+                console.log('Модальное окно закрыто');
+            });
+        }
+        
+        if (modal) {
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) modal.style.display = 'none';
+            });
+        }
+        
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal && modal.style.display === 'block') {
+                modal.style.display = 'none';
+            }
+        });
+        
+        console.log("✅ 9 задание загружено!");
+        console.log("   - To-Do List: добавление, удаление, фильтрация");
+        console.log("   - Галерея: клик на картинку → увеличение");
+    </script>
+    
     <script src="js/main.js"></script>
+    <script src="js/objects-demo.js"></script>
 </body>
 </html>
