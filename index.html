@@ -443,6 +443,126 @@
             padding: 10px 0;
             font-size: 1.2em;
         }
+
+        /* ========== 10 ЗАДАНИЕ: СТИЛИ ДЛЯ ФОРМЫ ========== */
+        .order-form {
+            background-color: #fff5e6;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 15px 0;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #6f4e37;
+        }
+        
+        .form-input, .form-select, .form-textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #d4a373;
+            border-radius: 10px;
+            font-size: 1em;
+            transition: all 0.3s;
+            box-sizing: border-box;
+        }
+        
+        .form-input:focus, .form-select:focus, .form-textarea:focus {
+            outline: none;
+            border-color: #6f4e37;
+            box-shadow: 0 0 5px rgba(111, 78, 55, 0.3);
+        }
+        
+        .form-input.error, .form-select.error {
+            border-color: #ff6b6b;
+            background-color: #ffe6e6;
+        }
+        
+        .error-message {
+            color: #ff6b6b;
+            font-size: 0.85em;
+            margin-top: 5px;
+            display: block;
+        }
+        
+        .radio-group, .checkbox-group {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .radio-group label, .checkbox-group label {
+            font-weight: normal;
+            cursor: pointer;
+        }
+        
+        .form-summary {
+            background-color: #e6d5b8;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: center;
+            font-size: 1.2em;
+        }
+        
+        .form-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+        
+        .submit-btn, .reset-btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .submit-btn {
+            background-color: #6f4e37;
+            color: white;
+        }
+        
+        .submit-btn:hover:not(:disabled) {
+            background-color: #d4a373;
+            transform: scale(1.02);
+        }
+        
+        .submit-btn:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+        
+        .reset-btn {
+            background-color: #ff6b6b;
+            color: white;
+        }
+        
+        .reset-btn:hover {
+            background-color: #ff4444;
+        }
+        
+        .info-text {
+            font-size: 0.85em;
+            color: #999;
+            margin-top: 5px;
+            display: block;
+        }
+        
+        .form-input.valid {
+            border-color: #4caf50;
+            background-color: #e8f5e9;
+        }
     </style>
 </head>
 <body>
@@ -593,7 +713,7 @@
                 </div>
             </section>
             
-            <!-- 9 задание: Галерея с модальным окном (работает с картинками из интернета) -->
+            <!-- 9 задание: Галерея с модальным окном -->
             <section class="js-demo-section">
                 <h2 class="section-title">🖼️ Галерея (клик на картинку для увеличения)</h2>
                 <div class="gallery-container">
@@ -604,6 +724,82 @@
                     <img class="modal-image" id="modal-image">
                     <div class="modal-caption" id="modal-caption"></div>
                 </div>
+            </section>
+            
+            <!-- ========== 10 ЗАДАНИЕ: ФОРМА ЗАКАЗА КОФЕ ========== -->
+            <section class="js-demo-section">
+                <h2 class="section-title">📝 Форма заказа кофе</h2>
+                
+                <form id="coffee-order-form" class="order-form">
+                    <div class="form-group">
+                        <label for="customer-name">Ваше имя *</label>
+                        <input type="text" id="customer-name" class="form-input" placeholder="Введите ваше имя" required>
+                        <span class="error-message" id="name-error"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="customer-phone">Телефон *</label>
+                        <input type="tel" id="customer-phone" class="form-input" placeholder="+7 (XXX) XXX-XX-XX" required>
+                        <span class="error-message" id="phone-error"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="coffee-type">Выберите напиток *</label>
+                        <select id="coffee-type" class="form-select" required>
+                            <option value="">-- Выберите напиток --</option>
+                            <option value="espresso">Эспрессо - 150₽</option>
+                            <option value="americano">Американо - 180₽</option>
+                            <option value="cappuccino">Капучино - 250₽</option>
+                            <option value="latte">Латте - 270₽</option>
+                            <option value="raf">Раф-кофе - 300₽</option>
+                        </select>
+                        <span class="error-message" id="coffee-error"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Объём</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="size" value="200" checked> 200 мл</label>
+                            <label><input type="radio" name="size" value="300"> 300 мл (+20₽)</label>
+                            <label><input type="radio" name="size" value="400"> 400 мл (+40₽)</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Добавки</label>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" name="additives" value="sugar"> Сахар</label>
+                            <label><input type="checkbox" name="additives" value="cinnamon"> Корица</label>
+                            <label><input type="checkbox" name="additives" value="syrup"> Сироп (+30₽)</label>
+                            <label><input type="checkbox" name="additives" value="cream"> Сливки (+30₽)</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="delivery-time">Время доставки</label>
+                        <input type="time" id="delivery-time" class="form-input" disabled>
+                        <span class="info-text">Введите адрес, чтобы выбрать время</span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="delivery-address">Адрес доставки</label>
+                        <input type="text" id="delivery-address" class="form-input" placeholder="Укажите адрес доставки">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="comment">Комментарий</label>
+                        <textarea id="comment" class="form-textarea" rows="2" placeholder="Пожелания к заказу..."></textarea>
+                    </div>
+                    
+                    <div class="form-summary" id="order-summary">
+                        <strong>Итого: <span id="total-price">150</span> ₽</strong>
+                    </div>
+                    
+                    <div class="form-buttons">
+                        <button type="submit" id="submit-btn" class="submit-btn" disabled>Оформить заказ</button>
+                        <button type="reset" class="reset-btn">Очистить форму</button>
+                    </div>
+                </form>
             </section>
             
             <section id="contacts" class="contacts-section">
@@ -804,13 +1000,13 @@
         });
         initTodo();
         
-        // ========== ГАЛЕРЕЯ (работает с картинками из интернета) ==========
+        // ========== ГАЛЕРЕЯ ==========
         const galleryImages = [
-           { thumb: 'images/content/espresso.jpg', full: 'images/content/espresso.jpg', title: 'Эспрессо' },
-           { thumb: 'images/content/cappuccino.jpg', full: 'images/content/cappuccino.jpg', title: 'Капучино' },
-           { thumb: 'images/content/latte.jpg', full: 'images/content/latte.jpg', title: 'Латте' },
-           { thumb: 'images/content/coffee-van.jpg', full: 'images/content/coffee-van.jpg', title: 'Наш фургончик' }
-];
+            { thumb: 'images/content/espresso.jpg', full: 'images/content/espresso.jpg', title: 'Эспрессо' },
+            { thumb: 'images/content/cappuccino.jpg', full: 'images/content/cappuccino.jpg', title: 'Капучино' },
+            { thumb: 'images/content/latte.jpg', full: 'images/content/latte.jpg', title: 'Латте' },
+            { thumb: 'images/content/coffee-van.jpg', full: 'images/content/coffee-van.jpg', title: 'Наш фургончик' }
+        ];
         
         const container = document.getElementById('gallery-thumbnails');
         const modal = document.getElementById('image-modal');
@@ -854,8 +1050,201 @@
         });
         
         console.log("✅ 9 задание загружено!");
-        console.log("   - To-Do List: добавление, удаление, фильтрация");
-        console.log("   - Галерея: клик на картинку → увеличение");
+    </script>
+    
+    <!-- 10 задание: форма заказа -->
+    <script>
+        "use strict";
+        
+        // ========== ПОЛУЧАЕМ ЭЛЕМЕНТЫ ФОРМЫ ==========
+        const form = document.getElementById('coffee-order-form');
+        const nameInput = document.getElementById('customer-name');
+        const phoneInput = document.getElementById('customer-phone');
+        const coffeeSelect = document.getElementById('coffee-type');
+        const sizeRadios = document.querySelectorAll('input[name="size"]');
+        const additivesCheckboxes = document.querySelectorAll('input[name="additives"]');
+        const deliveryTime = document.getElementById('delivery-time');
+        const deliveryAddress = document.getElementById('delivery-address');
+        const submitBtn = document.getElementById('submit-btn');
+        const totalPriceSpan = document.getElementById('total-price');
+        
+        // Цены
+        const coffeePrices = {
+            'espresso': 150,
+            'americano': 180,
+            'cappuccino': 250,
+            'latte': 270,
+            'raf': 300
+        };
+        
+        const sizePrices = { '200': 0, '300': 20, '400': 40 };
+        const additivePrices = { 'sugar': 0, 'cinnamon': 0, 'syrup': 30, 'cream': 30 };
+        
+        function calculateTotal() {
+            let total = 0;
+            
+            const selectedCoffee = coffeeSelect.value;
+            if (selectedCoffee && coffeePrices[selectedCoffee]) {
+                total += coffeePrices[selectedCoffee];
+            }
+            
+            let selectedSize = '200';
+            for (let radio of sizeRadios) {
+                if (radio.checked) {
+                    selectedSize = radio.value;
+                    break;
+                }
+            }
+            total += sizePrices[selectedSize] || 0;
+            
+            for (let checkbox of additivesCheckboxes) {
+                if (checkbox.checked) {
+                    total += additivePrices[checkbox.value] || 0;
+                }
+            }
+            
+            totalPriceSpan.textContent = total;
+            return total;
+        }
+        
+        function validateName() {
+            const name = nameInput.value.trim();
+            if (name.length < 2) {
+                nameInput.classList.add('error');
+                nameInput.classList.remove('valid');
+                document.getElementById('name-error').textContent = 'Введите имя (минимум 2 символа)';
+                return false;
+            }
+            nameInput.classList.remove('error');
+            nameInput.classList.add('valid');
+            document.getElementById('name-error').textContent = '';
+            return true;
+        }
+        
+        function validatePhone() {
+            const phone = phoneInput.value.trim();
+            const phoneRegex = /^[\d\+][\d\(\)\-\s]{9,}$/;
+            if (!phoneRegex.test(phone) || phone.length < 10) {
+                phoneInput.classList.add('error');
+                phoneInput.classList.remove('valid');
+                document.getElementById('phone-error').textContent = 'Введите корректный номер телефона';
+                return false;
+            }
+            phoneInput.classList.remove('error');
+            phoneInput.classList.add('valid');
+            document.getElementById('phone-error').textContent = '';
+            return true;
+        }
+        
+        function validateCoffee() {
+            const coffee = coffeeSelect.value;
+            if (!coffee) {
+                coffeeSelect.classList.add('error');
+                document.getElementById('coffee-error').textContent = 'Выберите напиток';
+                return false;
+            }
+            coffeeSelect.classList.remove('error');
+            document.getElementById('coffee-error').textContent = '';
+            return true;
+        }
+        
+        function checkFormValidity() {
+            const isNameValid = validateName();
+            const isPhoneValid = validatePhone();
+            const isCoffeeValid = validateCoffee();
+            
+            const isValid = isNameValid && isPhoneValid && isCoffeeValid;
+            
+            if (isValid) {
+                submitBtn.disabled = false;
+                submitBtn.style.opacity = '1';
+                submitBtn.style.backgroundColor = '#6f4e37';
+            } else {
+                submitBtn.disabled = true;
+                submitBtn.style.opacity = '0.6';
+                submitBtn.style.backgroundColor = '#ccc';
+            }
+            
+            return isValid;
+        }
+        
+        function checkDeliveryDependency() {
+            const address = deliveryAddress.value.trim();
+            if (address.length > 5) {
+                deliveryTime.disabled = false;
+                deliveryTime.placeholder = "Выберите время";
+            } else {
+                deliveryTime.disabled = true;
+                deliveryTime.value = '';
+            }
+        }
+        
+        function updateAll() {
+            calculateTotal();
+            checkFormValidity();
+            checkDeliveryDependency();
+        }
+        
+        nameInput.addEventListener('input', updateAll);
+        phoneInput.addEventListener('input', updateAll);
+        coffeeSelect.addEventListener('change', updateAll);
+        sizeRadios.forEach(radio => radio.addEventListener('change', updateAll));
+        additivesCheckboxes.forEach(checkbox => checkbox.addEventListener('change', updateAll));
+        deliveryAddress.addEventListener('input', updateAll);
+        
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            if (!checkFormValidity()) {
+                alert('Пожалуйста, заполните все обязательные поля корректно!');
+                return;
+            }
+            
+            const formData = {
+                customer: {
+                    name: nameInput.value.trim(),
+                    phone: phoneInput.value.trim()
+                },
+                order: {
+                    coffee: coffeeSelect.options[coffeeSelect.selectedIndex]?.text || '',
+                    coffeeValue: coffeeSelect.value,
+                    size: document.querySelector('input[name="size"]:checked')?.value || '200',
+                    additives: []
+                },
+                delivery: {
+                    address: deliveryAddress.value.trim() || 'Самовывоз',
+                    deliveryTime: deliveryTime.disabled ? 'Не указано' : deliveryTime.value || 'Не указано'
+                },
+                comment: document.getElementById('comment').value.trim(),
+                totalPrice: calculateTotal()
+            };
+            
+            additivesCheckboxes.forEach(checkbox => {
+                if (checkbox.checked) {
+                    formData.order.additives.push(checkbox.parentElement.textContent.trim());
+                }
+            });
+            
+            console.log('=== ДАННЫЕ ЗАКАЗА ===');
+            console.log(JSON.stringify(formData, null, 2));
+            console.log('=====================');
+            
+            alert(`Заказ оформлен!\n\nКлиент: ${formData.customer.name}\nНапиток: ${formData.order.coffee}\nИтого: ${formData.totalPrice} ₽\n\nДанные отправлены в консоль (F12)`);
+        });
+        
+        form.addEventListener('reset', function() {
+            setTimeout(() => {
+                updateAll();
+            }, 10);
+        });
+        
+        updateAll();
+        
+        console.log("✅ 10 задание загружено!");
+        console.log("   - Форма заказа кофе с валидацией");
+        console.log("   - Зависимости между полями");
+        console.log("   - Динамический подсчет суммы");
+        console.log("   - Кнопка отправки блокируется до заполнения");
     </script>
     
     <script src="js/main.js"></script>
