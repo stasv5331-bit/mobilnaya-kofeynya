@@ -566,6 +566,73 @@
             border-color: #4caf50;
             background-color: #e8f5e9;
         }
+
+        /* ========== 12 ЗАДАНИЕ: СТИЛИ ДЛЯ АНИМАЦИИ ========== */
+        .animation-demo {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #f4e9d8;
+            border-radius: 15px;
+            text-align: center;
+        }
+        
+        .animate-box {
+            width: 200px;
+            height: 100px;
+            background-color: #6f4e37;
+            color: white;
+            border-radius: 15px;
+            margin: 20px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            position: relative;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transition: background-color 0.3s;
+        }
+        
+        .animate-box:hover {
+            background-color: #d4a373;
+        }
+        
+        .effect-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        
+        .effect-btn {
+            background-color: #6f4e37;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .effect-btn:hover {
+            background-color: #d4a373;
+            transform: scale(1.02);
+        }
+        
+        .animation-controls {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #d4a373;
+        }
+        
+        .speed-info {
+            background-color: #e6d5b8;
+            padding: 10px;
+            border-radius: 10px;
+            margin-top: 15px;
+            font-size: 0.9em;
+        }
     </style>
 </head>
 <body>
@@ -805,6 +872,48 @@
                 </form>
             </section>
             
+            <!-- ========== 12 ЗАДАНИЕ: АНИМАЦИЯ JQUERY ========== -->
+            <section class="js-demo-section">
+                <h2 class="section-title">✨ jQuery анимация</h2>
+                
+                <div class="animation-demo">
+                    <h3 class="subsection-title">🎬 Эффекты на jQuery</h3>
+                    
+                    <div id="animated-box" class="animate-box">
+                        ☕ Кофе с собой!
+                    </div>
+                    
+                    <div class="effect-buttons">
+                        <button class="effect-btn" id="btn-show">.show()</button>
+                        <button class="effect-btn" id="btn-hide">.hide()</button>
+                        <button class="effect-btn" id="btn-fadeIn">.fadeIn()</button>
+                        <button class="effect-btn" id="btn-fadeOut">.fadeOut()</button>
+                        <button class="effect-btn" id="btn-slideDown">.slideDown()</button>
+                        <button class="effect-btn" id="btn-slideUp">.slideUp()</button>
+                        <button class="effect-btn" id="btn-slideToggle">.slideToggle()</button>
+                        <button class="effect-btn" id="btn-fadeTo">.fadeTo(0.3)</button>
+                    </div>
+                    
+                    <div class="effect-buttons">
+                        <button class="effect-btn" id="btn-animate">🎨 Произвольная анимация</button>
+                        <button class="effect-btn" id="btn-animate-reset">🔄 Сбросить позицию</button>
+                        <button class="effect-btn" id="btn-stop">⏹️ Остановить анимацию (.stop)</button>
+                        <button class="effect-btn" id="btn-delay">⏰ Анимация с задержкой</button>
+                        <button class="effect-btn" id="btn-chain">⛓️ Цепочка анимаций</button>
+                    </div>
+                    
+                    <div class="animation-controls">
+                        <button class="effect-btn" id="btn-reset-all">🔄 Сбросить всё (показать, очистить стили)</button>
+                    </div>
+                    
+                    <div class="speed-info">
+                        <strong>📊 Информация о скоростях jQuery:</strong><br>
+                        <code>jQuery.fx.speeds</code> = { _default: 400, fast: 200, slow: 600, coffee: 1000 }<br>
+                        ✅ <strong>Добавлена пользовательская скорость "coffee" (1000 мс)</strong> — используется в некоторых эффектах
+                    </div>
+                </div>
+            </section>
+            
             <section id="contacts" class="contacts-section">
                 <h2 class="section-title">📍 Контакты</h2>
                 <p><b>Адрес:</b> г. Красноярск, улица Ладо Кецховели, 22а</p>
@@ -828,11 +937,26 @@
     
     <a href="#" class="fixed-top-btn" title="Наверх">↑</a>
     
-    <!-- jQuery версия всех скриптов -->
+    <!-- jQuery версия всех скриптов + 12 задание -->
     <script>
         // Ждем загрузки документа через jQuery
         $(document).ready(function() {
             console.log("=== jQuery версия всех заданий загружена ===");
+            
+            // ============================================
+            // РАСШИРЕНИЕ jQuery.fx.speeds (12 задание)
+            // ============================================
+            // Добавляем свою скорость "coffee" = 1000 мс
+            $.fx.speeds.coffee = 1000;
+            
+            // Переопределяем существующую скорость "fast" (было 200, станет 100)
+            $.fx.speeds.fast = 100;
+            
+            console.log("✅ jQuery.fx.speeds расширен:");
+            console.log("   - coffee: " + $.fx.speeds.coffee + "ms");
+            console.log("   - fast (переопределен): " + $.fx.speeds.fast + "ms");
+            console.log("   - slow: " + $.fx.speeds.slow + "ms");
+            console.log("   - _default: " + $.fx.speeds._default + "ms");
             
             // ============================================
             // ПЕРЕКЛЮЧЕНИЕ ТЕМ (jQuery)
@@ -1228,11 +1352,125 @@
             
             updateAll();
             
-            console.log("✅ jQuery версия загружена!");
-            console.log("   - Слайдер, события, информация о странице");
-            console.log("   - To-Do List (добавление, удаление, фильтрация)");
-            console.log("   - Галерея (открытие картинок)");
-            console.log("   - Форма заказа (валидация, зависимость полей, подсчет суммы)");
+            // ============================================
+            // 12 ЗАДАНИЕ: АНИМАЦИЯ JQUERY
+            // ============================================
+            const $box = $('#animated-box');
+            let originalLeft = null;
+            
+            // Запоминаем исходную позицию
+            function storeOriginalPosition() {
+                if (originalLeft === null) {
+                    originalLeft = $box.css('left');
+                }
+            }
+            
+            // show/hide
+            $('#btn-show').on('click', function() {
+                $box.show('coffee'); // используем нашу скорость "coffee"
+                console.log('[АНИМАЦИЯ] .show()');
+            });
+            
+            $('#btn-hide').on('click', function() {
+                $box.hide('slow');
+                console.log('[АНИМАЦИЯ] .hide()');
+            });
+            
+            // fadeIn/fadeOut
+            $('#btn-fadeIn').on('click', function() {
+                $box.fadeIn('fast');
+                console.log('[АНИМАЦИЯ] .fadeIn() (скорость fast=' + $.fx.speeds.fast + 'ms)');
+            });
+            
+            $('#btn-fadeOut').on('click', function() {
+                $box.fadeOut(800);
+                console.log('[АНИМАЦИЯ] .fadeOut(800)');
+            });
+            
+            $('#btn-fadeTo').on('click', function() {
+                $box.fadeTo(500, 0.3);
+                console.log('[АНИМАЦИЯ] .fadeTo(0.3)');
+            });
+            
+            // slideDown/slideUp/slideToggle
+            $('#btn-slideDown').on('click', function() {
+                $box.slideDown(600);
+                console.log('[АНИМАЦИЯ] .slideDown(600)');
+            });
+            
+            $('#btn-slideUp').on('click', function() {
+                $box.slideUp(600);
+                console.log('[АНИМАЦИЯ] .slideUp(600)');
+            });
+            
+            $('#btn-slideToggle').on('click', function() {
+                $box.slideToggle('coffee');
+                console.log('[АНИМАЦИЯ] .slideToggle(coffee)');
+            });
+            
+            // Произвольная анимация .animate()
+            $('#btn-animate').on('click', function() {
+                storeOriginalPosition();
+                $box.animate({
+                    left: '+=100',
+                    opacity: 0.5,
+                    width: '300px',
+                    fontSize: '20px'
+                }, 800, function() {
+                    console.log('[АНИМАЦИЯ] .animate() завершена');
+                });
+                console.log('[АНИМАЦИЯ] .animate() — смещение вправо, прозрачность, увеличение');
+            });
+            
+            $('#btn-animate-reset').on('click', function() {
+                $box.animate({
+                    left: originalLeft || '0',
+                    opacity: 1,
+                    width: '200px',
+                    fontSize: '16px'
+                }, 400);
+                console.log('[АНИМАЦИЯ] Сброс позиции и стилей');
+            });
+            
+            // Управление анимацией .stop()
+            $('#btn-stop').on('click', function() {
+                $box.stop(true, true);
+                console.log('[АНИМАЦИЯ] .stop(true, true) — остановка анимации и завершение');
+            });
+            
+            // Анимация с задержкой .delay()
+            $('#btn-delay').on('click', function() {
+                $box.delay(1000).fadeOut(500).delay(500).fadeIn(500);
+                console.log('[АНИМАЦИЯ] .delay() — задержка 1 сек, fadeOut, задержка, fadeIn');
+            });
+            
+            // Цепочка анимаций
+            $('#btn-chain').on('click', function() {
+                $box.fadeTo(300, 0.5)
+                    .delay(500)
+                    .animate({ left: '+=50', width: '250px' }, 500)
+                    .delay(500)
+                    .fadeTo(300, 1)
+                    .animate({ left: '-=50', width: '200px' }, 500);
+                console.log('[АНИМАЦИЯ] Цепочка анимаций');
+            });
+            
+            // Сброс всего
+            $('#btn-reset-all').on('click', function() {
+                $box.stop(true, true).show().css({
+                    left: originalLeft || '0',
+                    opacity: 1,
+                    width: '200px',
+                    fontSize: '16px'
+                });
+                console.log('[АНИМАЦИЯ] Полный сброс');
+            });
+            
+            console.log("✅ 12 задание загружено!");
+            console.log("   - Предопределенные эффекты: show, hide, fade, slide");
+            console.log("   - Произвольная анимация .animate()");
+            console.log("   - Расширен $.fx.speeds (добавлена скорость 'coffee')");
+            console.log("   - Управление анимацией: .stop(), .delay()");
         });
     </script>
     
